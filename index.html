@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rádce podnikatele 2026/2027 – daně, účetnictví a právo pro OSVČ a malé firmy</title>
 <meta name="description" content="Srozumitelný průvodce pro české podnikatele: paušální daň, výdaje, odpisy, DPH, pojištění, EET 2.0, zaměstnanci, faktury, smlouvy, e-shop, GDPR, s.r.o. Kalkulačky a kalendář termínů 2027.">
-<meta name="theme-color" content="#1f6f5c">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f6f5c'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EKč%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#6c3cff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236c3cff'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EKč%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="progress" id="progress"></div>
 
 <header class="topbar">
   <div class="topbar-inner">
@@ -26,32 +27,38 @@
 <div class="layout" id="top">
   <aside class="sidebar" id="sidebar">
     <nav id="toc">
-      <div class="group">Začátek</div>
-      <a href="#novinky">Co se mění od 2027</a>
-      <a href="#zacinam">Začínám podnikat</a>
-      <a href="#formy">OSVČ, nebo s.r.o.?</a>
+      <div class="group">Začni tady</div>
+      <a href="#pruvodce"><span class="ic">🧭</span>Co mám teď dělat?</a>
+      <a href="#novinky"><span class="ic">🆕</span>Co se mění od 2027</a>
+      <a href="#zacinam"><span class="ic">🚀</span>Začínám podnikat</a>
+      <a href="#formy"><span class="ic">🏢</span>OSVČ, nebo s.r.o.?</a>
       <div class="group">Daně a odvody</div>
-      <a href="#pausalni-dan">Paušální daň</a>
-      <a href="#vydaje">Výdaje: co jde do nákladů</a>
-      <a href="#odpisy">Odpisy majetku</a>
-      <a href="#dph">DPH</a>
-      <a href="#pojisteni">Sociální a zdravotní</a>
-      <a href="#priznani">Přiznání, slevy, vratky</a>
-      <a href="#student">Student a brigády</a>
-      <a href="#eet">EET 2.0</a>
+      <a href="#pausalni-dan"><span class="ic">💸</span>Paušální daň</a>
+      <a href="#vydaje"><span class="ic">🧾</span>Výdaje a náklady</a>
+      <a href="#odpisy"><span class="ic">🚗</span>Odpisy majetku</a>
+      <a href="#dph"><span class="ic">📊</span>DPH</a>
+      <a href="#pojisteni"><span class="ic">🛡️</span>Sociální a zdravotní</a>
+      <a href="#priznani"><span class="ic">📝</span>Přiznání, slevy, vratky</a>
+      <a href="#student"><span class="ic">🎓</span>Student a brigády</a>
+      <a href="#eet"><span class="ic">📲</span>EET 2.0</a>
       <div class="group">Firma a lidé</div>
-      <a href="#zamestnanci">Zaměstnanci a mzdy</a>
-      <a href="#faktury">Faktury a doklady</a>
-      <a href="#sro">s.r.o. – povinnosti</a>
+      <a href="#zamestnanci"><span class="ic">👥</span>Zaměstnanci a mzdy</a>
+      <a href="#faktury"><span class="ic">📄</span>Faktury a doklady</a>
+      <a href="#sro"><span class="ic">🏛️</span>s.r.o. – povinnosti</a>
       <div class="group">Právo</div>
-      <a href="#smlouvy">Smlouvy a pohledávky</a>
-      <a href="#spotrebitele">E-shop, spotřebitelé, GDPR</a>
-      <a href="#kontroly">Kontrola z úřadu, sankce</a>
+      <a href="#smlouvy"><span class="ic">✍️</span>Smlouvy a pohledávky</a>
+      <a href="#pracovni-pravo"><span class="ic">👔</span>Pracovní právo</a>
+      <a href="#najem"><span class="ic">🏠</span>Nájem prostor</a>
+      <a href="#pravni-zaklady"><span class="ic">⚖️</span>Obchodní právo v praxi</a>
+      <a href="#spotrebitele"><span class="ic">🛒</span>E-shop, spotřebitelé, GDPR</a>
+      <a href="#kontroly"><span class="ic">🔍</span>Kontrola z úřadu</a>
       <div class="group">Nástroje</div>
-      <a href="#kalendar">Kalendář 2027</a>
-      <a href="#kalkulacky">Kalkulačky</a>
-      <a href="#slovnik">Slovníček</a>
-      <a href="#zdroje">Odkazy a zdroje</a>
+      <a href="#dokumenty"><span class="ic">📑</span>Vzory dokumentů</a>
+      <a href="#kalkulacky"><span class="ic">🧮</span>Kalkulačky</a>
+      <a href="#kalendar"><span class="ic">📅</span>Kalendář 2027</a>
+      <a href="#kviz"><span class="ic">🎯</span>Kvíz</a>
+      <a href="#slovnik"><span class="ic">📖</span>Slovníček</a>
+      <a href="#zdroje"><span class="ic">🔗</span>Odkazy a zdroje</a>
     </nav>
   </aside>
 
@@ -60,30 +67,53 @@
     <!-- HERO -->
     <div class="hero" id="hero">
       <span class="stamp">Stav k 14. 11. 2026 · čísla pro roky 2026 a 2027</span>
-      <h1>Účetní a právník do kapsy</h1>
+      <h1>Tvůj účetní a právník do kapsy 💼</h1>
       <p class="lead">Srozumitelné odpovědi na otázky, které řeší každý živnostník, malá i střední firma: kolik zaplatím, co si můžu dát do nákladů, jak odepisovat, kdy se stanu plátcem DPH, jak podat přiznání a dostat zpátky daně. Vždy s odkazem na zákon.</p>
       <div class="tiles">
-        <div class="tile"><div class="v">9 662 Kč</div><div class="l">paušální daň 1. pásmo / měsíc (2027)</div></div>
-        <div class="tile"><div class="v">8 769 Kč</div><div class="l">minimální zálohy OSVČ hlavní / měsíc (2027)</div></div>
-        <div class="tile"><div class="v">11. 1. 2027</div><div class="l">přihláška k paušální dani a EET OFF</div></div>
-        <div class="tile"><div class="v">2 000 000 Kč</div><div class="l">obrat za kalendářní rok → plátce DPH</div></div>
-        <div class="tile"><div class="v">80 000 Kč</div><div class="l">hranice pro odpisování majetku</div></div>
-        <div class="tile"><div class="v">30 840 Kč</div><div class="l">sleva na poplatníka ročně</div></div>
+        <div class="tile"><div class="e">💸</div><div class="v">9 662 Kč</div><div class="l">paušální daň 1. pásmo / měsíc (2027)</div></div>
+        <div class="tile"><div class="e">🛡️</div><div class="v">8 769 Kč</div><div class="l">minimální zálohy OSVČ hlavní / měsíc (2027)</div></div>
+        <div class="tile"><div class="e">⏰</div><div class="v">11. 1. 2027</div><div class="l">přihláška k paušální dani a EET OFF</div></div>
+        <div class="tile"><div class="e">📊</div><div class="v">2 000 000 Kč</div><div class="l">obrat za kalendářní rok → plátce DPH</div></div>
+        <div class="tile"><div class="e">🚗</div><div class="v">80 000 Kč</div><div class="l">hranice pro odpisování majetku</div></div>
+        <div class="tile"><div class="e">🎁</div><div class="v">30 840 Kč</div><div class="l">sleva na poplatníka ročně</div></div>
       </div>
       <div class="quick">
+        <a class="chip" href="#pruvodce">🧭 Co mám teď dělat?</a>
         <a class="chip" href="#calc-osvc">🧮 Vyplatí se mi paušální daň?</a>
         <a class="chip" href="#calc-odpisy">🧮 Odpisová kalkulačka</a>
         <a class="chip" href="#calc-sro">🧮 OSVČ vs. s.r.o.</a>
         <a class="chip" href="#calc-mzda">🧮 Cena zaměstnance</a>
         <a class="chip" href="#student">🎓 Daně pro studenty</a>
         <a class="chip" href="#kalendar">📅 Termíny 2027</a>
+        <a class="chip" href="#dokumenty">📑 Vzory dokumentů</a>
+        <a class="chip" href="#kviz">🎯 Kvíz</a>
       </div>
       <p class="muted" style="margin-top:16px;font-size:.88rem">Průvodce je informativní a nenahrazuje daňového poradce ani advokáta. Čísla se mění (někdy i zpětně), proto u důležitých rozhodnutí ověř aktuální stav na webu Finanční správy, ČSSZ nebo ve Sbírce zákonů.</p>
     </div>
 
+
+    <!-- PRUVODCE -->
+    <section class="block" id="pruvodce">
+      <div class="sec-head"><span class="sec-ic">🧭</span><h2>Co mám teď dělat?</h2><span class="tag">osobní průvodce</span></div>
+      <p class="intro">Klikni na svou situaci. Dostaneš plán krok za krokem s termíny, paragrafy a odkazy na kalkulačky a vzory dokumentů. Hotové kroky si odškrtávej, prohlížeč si je zapamatuje.</p>
+      <div class="situations item" id="situations" data-keywords="pruvodce situace co delat checklist plan">
+        <button class="sit" data-sit="start"><span class="e">🚀</span><span class="t">Začínám podnikat</span><span class="s">živnost, registrace, zálohy</span></button>
+        <button class="sit" data-sit="student"><span class="e">🎓</span><span class="t">Jsem student / brigádník</span><span class="s">jak dostat daně zpátky</span></button>
+        <button class="sit" data-sit="nezaplatil"><span class="e">💸</span><span class="t">Klient mi nezaplatil</span><span class="s">upomínka, výzva, soud</span></button>
+        <button class="sit" data-sit="zamestnanec"><span class="e">👥</span><span class="t">Chci přijmout člověka</span><span class="s">HPP, DPP, registrace</span></button>
+        <button class="sit" data-sit="majetek"><span class="e">🚗</span><span class="t">Kupuju auto nebo techniku</span><span class="s">odpisy, náklady, DPH</span></button>
+        <button class="sit" data-sit="urad"><span class="e">📬</span><span class="t">Přišel mi dopis z úřadu</span><span class="s">výzva, kontrola, lhůty</span></button>
+        <button class="sit" data-sit="dph"><span class="e">📈</span><span class="t">Blížím se 2 milionům</span><span class="s">registrace k DPH</span></button>
+        <button class="sit" data-sit="eshop"><span class="e">🛒</span><span class="t">Prodávám online</span><span class="s">e-shop, GDPR, OSS</span></button>
+        <button class="sit" data-sit="sro"><span class="e">🏛️</span><span class="t">Zvažuju s.r.o.</span><span class="s">přechod z živnosti</span></button>
+        <button class="sit" data-sit="konec"><span class="e">🏁</span><span class="t">Končím s podnikáním</span><span class="s">co odhlásit a dodanit</span></button>
+      </div>
+      <div id="plan"></div>
+    </section>
+
     <!-- NOVINKY -->
     <section class="block" id="novinky">
-      <div class="sec-head"><h2>Co se mění od 1. 1. 2027</h2><span class="tag">aktuality</span></div>
+      <div class="sec-head"><span class="sec-ic">🆕</span><h2>Co se mění od 1. 1. 2027</h2><span class="tag">aktuality</span></div>
       <p class="intro">Nejdůležitější změny, na které se připravit ještě letos.</p>
       <div class="table-wrap item"><table>
         <thead><tr><th>Změna</th><th>Co to znamená</th><th>Co udělat</th></tr></thead>
@@ -105,7 +135,7 @@
 
     <!-- ZACINAM -->
     <section class="block" id="zacinam">
-      <div class="sec-head"><h2>Začínám podnikat</h2><span class="tag">živnost krok za krokem</span></div>
+      <div class="sec-head"><span class="sec-ic">🚀</span><h2>Začínám podnikat</h2><span class="tag">živnost krok za krokem</span></div>
       <p class="intro">Jak se legálně stát podnikatelem během jednoho odpoledne.</p>
       <ol class="steps item">
         <li><strong>Vyber formu</strong>: živnost (OSVČ), nebo společnost (s.r.o.). Pro většinu začínajících je jednodušší a levnější živnost. <a href="#formy">Srovnání</a></li>
@@ -137,7 +167,7 @@
 
     <!-- FORMY -->
     <section class="block" id="formy">
-      <div class="sec-head"><h2>OSVČ, nebo s.r.o.?</h2><span class="tag">právní forma</span></div>
+      <div class="sec-head"><span class="sec-ic">🏢</span><h2>OSVČ, nebo s.r.o.?</h2><span class="tag">právní forma</span></div>
       <div class="table-wrap item"><table>
         <thead><tr><th></th><th>OSVČ (živnost)</th><th>s.r.o.</th></tr></thead>
         <tbody>
@@ -155,7 +185,7 @@
 
     <!-- PAUSALNI DAN -->
     <section class="block" id="pausalni-dan">
-      <div class="sec-head"><h2>Paušální daň</h2><span class="tag">§ 2a, § 7a, § 38lb a násl. ZDP</span></div>
+      <div class="sec-head"><span class="sec-ic">💸</span><h2>Paušální daň</h2><span class="tag">§ 2a, § 7a, § 38lb a násl. ZDP</span></div>
       <p class="intro">Jedna měsíční platba za daň, sociální a zdravotní pojištění. Žádné daňové přiznání ani přehledy pro ČSSZ a pojišťovnu.</p>
       <div class="table-wrap item"><table>
         <thead><tr><th>Pásmo</th><th>Kdo do něj patří (příjmy z podnikání)</th><th class="num">2026 měsíčně</th><th class="num">2027 měsíčně</th><th>2027: daň / soc. / zdrav.</th></tr></thead>
@@ -210,7 +240,7 @@
 
     <!-- VYDAJE -->
     <section class="block" id="vydaje">
-      <div class="sec-head"><h2>Výdaje: co si můžu dát do nákladů</h2><span class="tag">§ 7, § 24, § 25 ZDP</span></div>
+      <div class="sec-head"><span class="sec-ic">🧾</span><h2>Výdaje: co si můžu dát do nákladů</h2><span class="tag">§ 7, § 24, § 25 ZDP</span></div>
       <h3>4 způsoby, jak uplatnit výdaje</h3>
       <div class="table-wrap item"><table>
         <thead><tr><th>Způsob</th><th>Jak funguje</th><th>Pro koho</th></tr></thead>
@@ -281,7 +311,7 @@
 
     <!-- ODPISY -->
     <section class="block" id="odpisy">
-      <div class="sec-head"><h2>Odpisy majetku</h2><span class="tag">§ 26–33 ZDP</span></div>
+      <div class="sec-head"><span class="sec-ic">🚗</span><h2>Odpisy majetku</h2><span class="tag">§ 26–33 ZDP</span></div>
       <p class="intro">Dražší majetek se do nákladů nedává najednou, ale rozloží se na několik let.</p>
       <div class="cols item">
         <div class="col yes"><h4>Co se odpisuje</h4><ul>
@@ -321,12 +351,52 @@
         <p>Oprava vrací majetek do původního stavu (výměna rozbitého dílu) a jde rovnou do nákladů. Technické zhodnocení přidává něco nového: nástavba, přístavba, modernizace, rozšíření vybavení. Pokud jeho výdaje u jednoho majetku za rok přesáhnou 80 000 Kč, zvyšuje vstupní cenu a odpisuje se. Do této částky se můžeš rozhodnout, jestli ho dáš do nákladů, nebo budeš odpisovat. <span class="law">§ 33 ZDP</span></p>
       </div></details>
       <details class="qa item"><summary>A software, web, licence?</summary><div class="a"><p>Nehmotný majetek (software, web, know-how) se od roku 2021 daňově neodpisuje podle odpisových skupin. U daňové evidence se výdaj obvykle uplatní jednorázově, v účetnictví podle účetních odpisů. U konkrétního případu (vyvinutý software, licence na dobu určitou) si pravidla ověř nebo se poraď.</p></div></details>
+
+      <h3>🔎 Do které skupiny to patří?</h3>
+      <div class="item" data-keywords="odpisova skupina zarazeni notebook auto dodavka klimatizace fotovoltaika budova vytah">
+        <div class="field" style="max-width:480px"><input id="lk-q" type="search" placeholder="Napiš, co kupuješ: auto, notebook, klimatizace…" aria-label="Hledat majetek"></div>
+        <div class="lookup-list" id="lk-list"></div>
+        <p class="muted" style="font-size:.9rem;margin-top:10px">Typické zařazení. Přesně rozhoduje kód CZ-CPA (u staveb CZ-CC) v příloze č. 1 zákona o daních z příjmů. U sporných věcí si kód ověř.</p>
+      </div>
+
+      <h3>🧠 Rady, jak s odpisy vyzrát (legálně)</h3>
+      <details class="qa item"><summary>Rovnoměrně, nebo zrychleně?</summary><div class="a">
+        <ul>
+          <li><strong>Zrychleně</strong> dáš do nákladů víc v prvních letech. Hodí se, když máš teď vysoký zisk (třeba nad hranicí 23% daně) nebo plánuješ věc po pár letech prodat. U auta za 350 000 Kč je to v 1. roce 70 000 Kč, ve 2. roce 112 000 Kč.</li>
+          <li><strong>Rovnoměrně</strong> rozloží náklad stejnoměrně (u auta 38 500 Kč, pak 4× 77 875 Kč). Hodí se, když čekáš rostoucí zisky nebo bys v prvním roce stejně „propadl“ pod slevu na poplatníka.</li>
+          <li>Celkem odepíšeš vždy stejnou částku, mění se jen rozložení v čase. Způsob volíš u každé věci zvlášť a pak ho neměníš.</li>
+        </ul>
+        <p><a href="#calc-odpisy">→ Porovnej obě metody v kalkulačce</a></p>
+      </div></details>
+      <details class="qa item"><summary>Vyplatí se nakoupit na konci roku?</summary><div class="a">
+        <p>Často ano. V roce zařazení uplatníš <strong>celý roční odpis</strong>, i když věc koupíš 20. prosince. Drobný majetek do 80 000 Kč jde do nákladů celý. Podmínka: věc musíš mít a začít používat do 31. 12. (zaplacená záloha nestačí). A kupuj jen to, co opravdu potřebuješ. Utratit 100 Kč, abys ušetřil 15 Kč daně plus pojistné, se nevyplatí.</p>
+      </div></details>
+      <details class="qa item"><summary>Koupit auto na firmu, nebo soukromě?</summary><div class="a">
+        <ul>
+          <li><strong>Výdajový paušál nebo paušální daň:</strong> na tom nezáleží, nic dalšího si do nákladů nedáš. Auto kup soukromě.</li>
+          <li><strong>Skutečné výdaje:</strong> auto v obchodním majetku = odpisy + všechny výdaje (krácené soukromými jízdami). Alternativa bez knihy jízd: paušál 5 000 Kč měsíčně (4 000 Kč při soukromém užití).</li>
+          <li><strong>Plátce DPH:</strong> můžeš odečíst DPH z ceny i provozu, ale jen v poměru k podnikání.</li>
+          <li><strong>Prodej později:</strong> u auta v obchodním majetku je příjem z prodeje příjmem z podnikání (zdaní se a zatíží pojistným), do výdajů jde zůstatková cena.</li>
+        </ul>
+      </div></details>
+      <details class="qa item"><summary>Co když majetek během odpisování prodám, vyřadím nebo zničím?</summary><div class="a">
+        <p>V roce vyřazení uplatníš <strong>polovinu ročního odpisu</strong>. Zbylou zůstatkovou cenu dáš do výdajů při prodeji (proti příjmu z prodeje), při likvidaci nebo škodě (u škody do výše náhrady od pojišťovny, nad ni jen při doložení, např. krádež ohlášená policii). <span class="law">§ 26 odst. 7, § 24 odst. 2 písm. b) ZDP</span></p>
+      </div></details>
+      <details class="qa item"><summary>Leasing, úvěr, nebo hotově?</summary><div class="a">
+        <ul>
+          <li><strong>Operativní leasing / pronájem:</strong> splátky jsou náklad průběžně, majetek neodpisuješ. Jednoduché.</li>
+          <li><strong>Úvěr nebo hotově:</strong> majetek je tvůj, odpisuješ ho. Úroky z úvěru jsou náklad.</li>
+          <li><strong>Finanční leasing:</strong> daňové zacházení má zvláštní pravidla (kdo odpisuje, jak se rozpouští akontace). Před podpisem si nech spočítat konkrétní nabídku.</li>
+        </ul>
+      </div></details>
+      <details class="qa item"><summary>Mám výdajový paušál. Mám vůbec evidovat majetek?</summary><div class="a"><p>Ano, aspoň jednoduše. Odpisy se „fiktivně“ uplatňují i při paušálu (zůstatková cena klesá). Až přejdeš na skutečné výdaje, budeš pokračovat jen se zbylou zůstatkovou cenou. Bez evidence nevíš, kolik ti zbývá.</p></div></details>
+
       <p><a href="#calc-odpisy">→ Odpisová kalkulačka s rozpisem po letech</a></p>
     </section>
 
     <!-- DPH -->
     <section class="block" id="dph">
-      <div class="sec-head"><h2>DPH</h2><span class="tag">z. č. 235/2004 Sb.</span></div>
+      <div class="sec-head"><span class="sec-ic">📊</span><h2>DPH</h2><span class="tag">z. č. 235/2004 Sb.</span></div>
       <div class="table-wrap item"><table>
         <thead><tr><th>Situace</th><th>Kdy se stáváš plátcem</th><th>Přihláška</th></tr></thead>
         <tbody>
@@ -369,7 +439,7 @@
 
     <!-- POJISTENI -->
     <section class="block" id="pojisteni">
-      <div class="sec-head"><h2>Sociální a zdravotní pojištění OSVČ</h2><span class="tag">z. č. 589/1992 Sb., 592/1992 Sb.</span></div>
+      <div class="sec-head"><span class="sec-ic">🛡️</span><h2>Sociální a zdravotní pojištění OSVČ</h2><span class="tag">z. č. 589/1992 Sb., 592/1992 Sb.</span></div>
       <div class="table-wrap item"><table>
         <thead><tr><th>Parametr</th><th class="num">2026</th><th class="num">2027</th></tr></thead>
         <tbody>
@@ -406,7 +476,7 @@
 
     <!-- PRIZNANI -->
     <section class="block" id="priznani">
-      <div class="sec-head"><h2>Daňové přiznání, slevy a jak dostat daně zpátky</h2><span class="tag">§ 15, § 35ba, § 35c, § 38g ZDP</span></div>
+      <div class="sec-head"><span class="sec-ic">📝</span><h2>Daňové přiznání, slevy a jak dostat daně zpátky</h2><span class="tag">§ 15, § 35ba, § 35c, § 38g ZDP</span></div>
       <h3>Termíny pro přiznání za rok 2026</h3>
       <div class="table-wrap item"><table>
         <thead><tr><th>Způsob podání</th><th>Termín (podání i zaplacení)</th></tr></thead>
@@ -467,7 +537,7 @@
 
     <!-- STUDENT -->
     <section class="block" id="student">
-      <div class="sec-head"><h2>Student, brigády a vracení daní</h2><span class="tag">nejčastější otázky</span></div>
+      <div class="sec-head"><span class="sec-ic">🎓</span><h2>Student, brigády a vracení daní</h2><span class="tag">nejčastější otázky</span></div>
       <div class="tip item"><strong>Základ:</strong> každý má slevu na poplatníka 30 840 Kč ročně. Při 15% dani pokryje daň ze základu přibližně 205 600 Kč. Pokud ti během roku zaměstnavatel strhával daň (nepodepsal jsi prohlášení, měl jsi víc brigád), tuto daň ti finanční úřad po podání přiznání vrátí.</div>
       <details class="qa item"><summary>Jak dostanu jako student daně zpátky?</summary><div class="a">
         <ol>
@@ -505,7 +575,7 @@
 
     <!-- EET -->
     <section class="block" id="eet">
-      <div class="sec-head"><h2>EET 2.0 (od 1. 1. 2027)</h2><span class="tag">z. č. 180/2026 Sb.</span></div>
+      <div class="sec-head"><span class="sec-ic">📲</span><h2>EET 2.0 (od 1. 1. 2027)</h2><span class="tag">z. č. 180/2026 Sb.</span></div>
       <div class="table-wrap item"><table>
         <thead><tr><th>Platba</th><th>Eviduje se?</th></tr></thead>
         <tbody>
@@ -532,7 +602,7 @@
 
     <!-- ZAMESTNANCI -->
     <section class="block" id="zamestnanci">
-      <div class="sec-head"><h2>Zaměstnanci a mzdy</h2><span class="tag">zákoník práce 262/2006 Sb.</span></div>
+      <div class="sec-head"><span class="sec-ic">👥</span><h2>Zaměstnanci a mzdy</h2><span class="tag">zákoník práce 262/2006 Sb.</span></div>
       <div class="table-wrap item"><table>
         <thead><tr><th></th><th>HPP (pracovní smlouva)</th><th>DPP</th><th>DPČ</th></tr></thead>
         <tbody>
@@ -576,7 +646,7 @@
 
     <!-- FAKTURY -->
     <section class="block" id="faktury">
-      <div class="sec-head"><h2>Faktury a doklady</h2><span class="tag">§ 435 OZ, § 29 z. o DPH, § 11 z. o účetnictví</span></div>
+      <div class="sec-head"><span class="sec-ic">📄</span><h2>Faktury a doklady</h2><span class="tag">§ 435 OZ, § 29 z. o DPH, § 11 z. o účetnictví</span></div>
       <div class="cols item">
         <div class="col yes"><h4>Faktura neplátce DPH</h4><ul>
           <li>jméno a příjmení / název, sídlo, IČO</li>
@@ -611,7 +681,7 @@
 
     <!-- SRO -->
     <section class="block" id="sro">
-      <div class="sec-head"><h2>s.r.o.: založení a povinnosti</h2><span class="tag">ZOK 90/2012 Sb.</span></div>
+      <div class="sec-head"><span class="sec-ic">🏛️</span><h2>s.r.o.: založení a povinnosti</h2><span class="tag">ZOK 90/2012 Sb.</span></div>
       <ol class="steps item">
         <li><strong>Zakladatelská listina / společenská smlouva</strong> ve formě notářského zápisu. Jednoduchou s.r.o. založí notář včetně zápisu do obchodního rejstříku.</li>
         <li><strong>Základní kapitál</strong> min. 1 Kč na společníka. Z praktických důvodů (banky, důvěryhodnost) se volí víc.</li>
@@ -646,7 +716,7 @@
 
     <!-- SMLOUVY -->
     <section class="block" id="smlouvy">
-      <div class="sec-head"><h2>Smlouvy a pohledávky</h2><span class="tag">občanský zákoník 89/2012 Sb.</span></div>
+      <div class="sec-head"><span class="sec-ic">✍️</span><h2>Smlouvy a pohledávky</h2><span class="tag">občanský zákoník 89/2012 Sb.</span></div>
       <div class="table-wrap item"><table>
         <thead><tr><th>Pravidlo</th><th>Co platí</th></tr></thead>
         <tbody>
@@ -660,8 +730,8 @@
       <h3>Klient nezaplatil: postup</h3>
       <ol class="steps item">
         <li><strong>Připomínka</strong> den po splatnosti (telefon, e-mail).</li>
-        <li><strong>Upomínka</strong> s novým termínem a vyčíslením úroku z prodlení.</li>
-        <li><strong>Předžalobní výzva</strong>: doporučeně nebo datovkou, nejméně 7 dní před podáním žaloby; jinak ti soud nemusí přiznat náhradu nákladů <span class="law">§ 142a OSŘ</span>.</li>
+        <li><strong>Upomínka</strong> s novým termínem a vyčíslením úroku z prodlení. <a href="#dokumenty">Vzor upomínky</a></li>
+        <li><strong>Předžalobní výzva</strong>: doporučeně nebo datovkou, nejméně 7 dní před podáním žaloby; jinak ti soud nemusí přiznat náhradu nákladů <span class="law">§ 142a OSŘ</span>. <a href="#dokumenty">Vzor výzvy</a></li>
         <li><strong>Žaloba / (elektronický) platební rozkaz</strong> u okresního soudu. Soudní poplatek je zpravidla procento z dlužné částky (u elektronického podání nižší); ověř aktuální sazebník.</li>
         <li><strong>Exekuce</strong> na základě pravomocného rozhodnutí.</li>
         <li><strong>Insolvence dlužníka:</strong> sleduj <a href="https://isir.justice.cz" target="_blank" rel="noopener">insolvenční rejstřík</a>; pohledávku přihlas včas (lhůta běží od rozhodnutí o úpadku, typicky 2 měsíce).</li>
@@ -680,9 +750,132 @@
       <details class="qa item"><summary>Ručím jako OSVČ i majetkem manžela/manželky?</summary><div class="a"><p>OSVČ ručí celým svým majetkem. Dluhy z podnikání mohou za určitých podmínek dopadnout i na společné jmění manželů (zejména pokud druhý manžel s podnikáním souhlasil nebo z něj majetek pochází). Řešením je smlouva o zúžení SJM před vznikem dluhů, nebo s.r.o.</p></div></details>
     </section>
 
+
+    <!-- PRACOVNI PRAVO -->
+    <section class="block" id="pracovni-pravo">
+      <div class="sec-head"><span class="sec-ic">👔</span><h2>Pracovní právo pro zaměstnavatele</h2><span class="tag">zákoník práce po flexinovele 2025</span></div>
+      <p class="intro">Tady se chybuje nejčastěji. Neplatná výpověď znamená, že zaměstnanec může u soudu vysoudit náhradu mzdy za celou dobu sporu.</p>
+      <div class="table-wrap item"><table>
+        <thead><tr><th>Jak skončit</th><th>Kdo a kdy</th><th>Lhůta / doba</th><th>Pozor</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Dohoda</strong> <span class="law">§ 49 ZP</span></td><td>obě strany kdykoli</td><td>ke dni, na kterém se dohodnete</td><td>vždy písemně; důvod uveď, pokud jde o organizační změnu (kvůli odstupnému)</td></tr>
+          <tr><td><strong>Výpověď zaměstnancem</strong></td><td>zaměstnanec, bez udání důvodu</td><td>2 měsíce, běží <strong>ode dne doručení</strong></td><td>lze sjednat delší, stejnou pro obě strany</td></tr>
+          <tr><td><strong>Výpověď zaměstnavatelem</strong> <span class="law">§ 52 ZP</span></td><td>jen ze zákonných důvodů (organizační změny, zdraví, nesplnění požadavků, porušení povinností…)</td><td>2 měsíce; <strong>1 měsíc</strong> při porušení povinností nebo nesplnění požadavků; běží ode dne doručení</td><td>důvod musí být ve výpovědi konkrétně popsán; u neuspokojivých výsledků předchozí písemná výzva</td></tr>
+          <tr><td><strong>Okamžité zrušení</strong> <span class="law">§ 55, § 56 ZP</span></td><td>zaměstnavatel: zvlášť hrubé porušení povinností, odsouzení za úmyslný trestný čin; zaměstnanec: např. nevyplacená mzda 15 dní po splatnosti</td><td>okamžitě</td><td>výjimečný krok, soudy ho přezkoumávají přísně</td></tr>
+          <tr><td><strong>Ve zkušební době</strong> <span class="law">§ 66 ZP</span></td><td>obě strany, bez důvodu</td><td>doručit nejlépe 3 dny předem</td><td>jen písemně; zaměstnavatel ne v prvních 14 dnech pracovní neschopnosti zaměstnance</td></tr>
+        </tbody>
+      </table></div>
+      <div class="note item">Od 1. 6. 2025 platí flexinovela: <strong>zkušební doba až 4 měsíce</strong> (vedoucí až 8 měsíců), nejvýš polovina sjednané doby trvání pracovního poměru. Výpovědní doba už nezačíná prvním dnem dalšího měsíce, ale <strong>dnem doručení výpovědi</strong>, a končí dnem, který se s ním číselně shoduje.</div>
+      <div class="cols item">
+        <div class="col yes"><h4>✅ Co musíš dodržet</h4><ul>
+          <li>pracovní smlouva písemně, zkušební doba sjednaná písemně nejpozději v den nástupu</li>
+          <li>informace o podmínkách zaměstnání do 7 dnů od vzniku pracovního poměru</li>
+          <li>mzda splatná nejpozději v následujícím kalendářním měsíci <span class="law">§ 141</span></li>
+          <li>dovolená aspoň 4 týdny ročně <span class="law">§ 213</span></li>
+          <li>přesčasy nejvýš 8 hodin týdně v průměru; nařízené max. 150 hodin ročně <span class="law">§ 93</span></li>
+          <li>evidence pracovní doby, BOZP, lékařské prohlídky</li>
+        </ul></div>
+        <div class="col no"><h4>❌ Čeho se vyvarovat</h4><ul>
+          <li>výpověď v ochranné době: nemoc, těhotenství, mateřská/rodičovská <span class="law">§ 53</span></li>
+          <li>výpověď bez konkrétního důvodu nebo s důvodem, který nejde doložit</li>
+          <li>„dobrovolná“ výpověď vynucená tlakem</li>
+          <li>konkurenční doložka bez peněžitého vyrovnání (min. polovina průměrného výdělku za každý měsíc, max. 1 rok) <span class="law">§ 310</span></li>
+          <li>práce „na živnosťák“ místo pracovního poměru (švarcsystém)</li>
+        </ul></div>
+      </div>
+      <details class="qa item"><summary>Kolik je odstupné?</summary><div class="a">
+        <p>Při výpovědi nebo dohodě z organizačních důvodů (rušení zaměstnavatele, přemístění, nadbytečnost) <span class="law">§ 67 ZP</span>:</p>
+        <ul><li>pracovní poměr kratší než 1 rok: aspoň <strong>1×</strong> průměrný měsíční výdělek</li><li>1 až 2 roky: aspoň <strong>2×</strong></li><li>2 roky a déle: aspoň <strong>3×</strong></li><li>kvůli pracovnímu úrazu nebo nemoci z povolání: aspoň <strong>12×</strong></li></ul>
+        <p>Odstupné je náklad firmy a zaměstnanci se daní a pojistí jako mzda.</p>
+      </div></details>
+      <details class="qa item"><summary>Jak správně doručit výpověď?</summary><div class="a">
+        <ol>
+          <li>Nejlépe osobně na pracovišti, zaměstnanec podepíše převzetí s datem.</li>
+          <li>Když odmítne převzít, výpověď je i tak doručená. Sepiš o tom záznam se svědkem.</li>
+          <li>Jinak do datové schránky zaměstnance (pokud s tím souhlasil) nebo poštou do vlastních rukou.</li>
+          <li>Ode dne doručení běží výpovědní doba. Hlídej si, že nespadá do ochranné doby.</li>
+        </ol>
+      </div></details>
+      <details class="qa item"><summary>Jak dlouho mám na výpověď za porušení povinností?</summary><div class="a"><p>Do 2 měsíců ode dne, kdy ses o porušení dozvěděl, a nejpozději do 15 měsíců od chvíle, kdy k němu došlo (objektivní lhůta zavedená flexinovelou). Po uplynutí lhůty už výpověď z tohoto důvodu dát nejde. <span class="law">§ 58 ZP</span></p></div></details>
+    </section>
+
+    <!-- NAJEM -->
+    <section class="block" id="najem">
+      <div class="sec-head"><span class="sec-ic">🏠</span><h2>Nájem kanceláře, dílny, obchodu</h2><span class="tag">§ 2302–2315 OZ</span></div>
+      <div class="table-wrap item"><table>
+        <thead><tr><th>Typ nájmu</th><th>Jak ho ukončit</th><th>Výpovědní doba</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Na dobu neurčitou</strong> <span class="law">§ 2312</span></td><td>výpověď i bez důvodu</td><td><strong>6 měsíců</strong>; s vážným důvodem 3 měsíce. Trvá-li nájem přes 5 let a druhá strana výpověď nemohla čekat, vždy 6 měsíců.</td></tr>
+          <tr><td><strong>Na dobu určitou</strong> <span class="law">§ 2308–2310</span></td><td>jen ze zákonných nebo sjednaných důvodů, <strong>důvod musí být ve výpovědi uveden</strong>, jinak je neplatná</td><td>3 měsíce</td></tr>
+          <tr><td><strong>Obrana proti výpovědi</strong> <span class="law">§ 2314</span></td><td>písemné námitky do 1 měsíce od doručení výpovědi, pak případně žaloba</td><td>–</td></tr>
+        </tbody>
+      </table></div>
+      <div class="cols item">
+        <div class="col yes"><h4>✅ Do smlouvy dej</h4><ul>
+          <li>přesné vymezení prostor a účelu (co tam smíš dělat)</li>
+          <li>nájemné, zálohy na služby, způsob vyúčtování, valorizaci (inflační doložku)</li>
+          <li>jistotu (kauci) a kdy se vrací</li>
+          <li>souhlas pronajímatele se sídlem firmy a s podnájmem</li>
+          <li>kdo platí opravy a úpravy a co se stane s nimi na konci nájmu</li>
+          <li>výpovědní důvody, pokud jde o nájem na dobu určitou</li>
+        </ul></div>
+        <div class="col no"><h4>⚠️ Na co si dát pozor</h4><ul>
+          <li>na začátku i na konci sepiš předávací protokol s fotkami</li>
+          <li>když vyklidíš prostory podle výpovědi, bere se výpověď jako přijatá bez námitek <span class="law">§ 2313</span></li>
+          <li>když pronajímatel vypoví a převezme tvou zákaznickou základnu (třeba nový nájemce ve stejném oboru), máš nárok na náhradu <span class="law">§ 2315</span></li>
+          <li>nájem nad 1 rok si u nemovitosti zapsané v katastru můžeš nechat zapsat (ochrana při prodeji budovy)</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- PRAVNI ZAKLADY -->
+    <section class="block" id="pravni-zaklady">
+      <div class="sec-head"><span class="sec-ic">⚖️</span><h2>Obchodní právo v praxi</h2><span class="tag">partneři, VOP, odpovědnost, krize</span></div>
+      <h3>🕵️ Prověř partnera, než mu pošleš zboží nebo práci</h3>
+      <ol class="steps item">
+        <li><strong>ARES</strong> (ares.gov.cz): existuje firma, má IČO, sídlo, živnost?</li>
+        <li><strong>Obchodní rejstřík</strong> (or.justice.cz): kdo je jednatel, <em>jak za firmu jedná</em> (samostatně, nebo dva společně), zveřejňuje závěrky? Nezveřejněné závěrky jsou varovný signál.</li>
+        <li><strong>Insolvenční rejstřík</strong> (isir.justice.cz): není firma ani jednatel v insolvenci?</li>
+        <li><strong>Registr plátců DPH</strong> (Moje daně): je to <em>nespolehlivý plátce</em>? Platíš na zveřejněný účet? Jinak můžeš ručit za jeho nezaplacenou DPH <span class="law">§ 109 z. o DPH</span>.</li>
+        <li><strong>Nový klient a velká zakázka:</strong> chtěj zálohu nebo platbu po etapách.</li>
+      </ol>
+      <details class="qa item"><summary>Kdo může za firmu podepsat smlouvu?</summary><div class="a">
+        <ul>
+          <li><strong>Jednatel</strong> podle zápisu v obchodním rejstříku (pozor na „jednají dva jednatelé společně“).</li>
+          <li><strong>Prokurista</strong> v rozsahu prokury.</li>
+          <li><strong>Zaměstnanec</strong> v běžných věcech, které vyplývají z jeho pozice (prodavač, nákupčí) <span class="law">§ 430 OZ</span>.</li>
+          <li>Kdokoli jiný na základě <strong>plné moci</strong>. Chtěj ji vidět. <a href="#dokumenty">Vzor plné moci</a></li>
+        </ul>
+      </div></details>
+      <details class="qa item"><summary>Obchodní podmínky (VOP): kdy platí?</summary><div class="a">
+        <ul>
+          <li>Jsou součástí smlouvy, pokud na ně smlouva odkazuje a druhá strana je zná, nebo jsou přiložené <span class="law">§ 1751 OZ</span>.</li>
+          <li>Když se smlouva a VOP liší, má přednost smlouva.</li>
+          <li><strong>Překvapivé ujednání</strong> ve VOP (něco, s čím druhá strana rozumně nemohla počítat) neplatí, pokud ho výslovně nepřijala <span class="law">§ 1753 OZ</span>. Důležité věci (pokuty, omezení odpovědnosti) proto dej přímo do smlouvy nebo je zvýrazni.</li>
+        </ul>
+      </div></details>
+      <details class="qa item"><summary>Odpovídám za škodu, když se něco pokazí?</summary><div class="a">
+        <ul>
+          <li>Kdo poruší smlouvu, nahradí škodu. Zprostí se jen, když mu v plnění zabránila mimořádná, nepředvídatelná a nepřekonatelná překážka <span class="law">§ 2913 OZ</span>.</li>
+          <li>Odpovědnost si můžeš ve smlouvě omezit (třeba stropem do výše ceny zakázky). Nelze ale předem vyloučit odpovědnost za újmu na zdraví ani za škodu způsobenou úmyslně nebo z hrubé nedbalosti <span class="law">§ 2898 OZ</span>.</li>
+          <li><strong>Smluvní pokuta:</strong> sjednej ji jasně (výše, za co) a přiměřeně, ideálně písemně kvůli důkazu. Nepřiměřeně vysokou soud sníží <span class="law">§ 2048–2051 OZ</span>.</li>
+          <li><strong>Pojištění odpovědnosti</strong> z podnikání je pro řemeslníky, IT, poradce a e-shopy skoro povinnost. Stojí obvykle stovky až nízké tisíce ročně.</li>
+        </ul>
+      </div></details>
+      <details class="qa item"><summary>Firma má dluhy, které nezvládá. Co hrozí?</summary><div class="a">
+        <ul>
+          <li><strong>Úpadek</strong> = víc věřitelů, dluhy přes 30 dní po splatnosti a nejsi schopen je platit (u firem i předlužení) <span class="law">§ 3 insolvenčního zákona</span>.</li>
+          <li>Podnikatel (OSVČ i jednatel za firmu) v úpadku musí <strong>bez zbytečného odkladu podat insolvenční návrh</strong> <span class="law">§ 98 IZ</span>. Když to neudělá, odpovídá věřitelům za škodu.</li>
+          <li>Jednatel, který nechá firmu dál hromadit dluhy, může ručit vlastním majetkem <span class="law">§ 68 ZOK</span>.</li>
+          <li>Řešení: dohoda s věřiteli, splátkové kalendáře (i u FÚ <span class="law">§ 156 DŘ</span>), reorganizace, oddlužení. Poraď se včas s insolvenčním advokátem nebo bezplatnou dluhovou poradnou.</li>
+        </ul>
+      </div></details>
+      <details class="qa item"><summary>Platí smlouva uzavřená e-mailem nebo přes WhatsApp?</summary><div class="a"><p>Většinou ano: smlouva nepotřebuje zvláštní formu, pokud ji zákon nevyžaduje (např. převod nemovitosti nebo pracovní smlouva musí být písemně). E-mail se jménem se obvykle považuje za písemnou formu. U důležitých smluv použij podpis na papíře, elektronický podpis nebo aspoň jasné potvrzení „souhlasím s nabídkou ze dne…“. Vždy si uchovej celou komunikaci.</p></div></details>
+    </section>
+
     <!-- SPOTREBITELE -->
     <section class="block" id="spotrebitele">
-      <div class="sec-head"><h2>E-shop, spotřebitelé a GDPR</h2><span class="tag">OZ, z. o ochraně spotřebitele, GDPR</span></div>
+      <div class="sec-head"><span class="sec-ic">🛒</span><h2>E-shop, spotřebitelé a GDPR</h2><span class="tag">OZ, z. o ochraně spotřebitele, GDPR</span></div>
       <div class="table-wrap item"><table>
         <thead><tr><th>Pravidlo</th><th>Co platí</th></tr></thead>
         <tbody>
@@ -713,7 +906,7 @@
 
     <!-- KONTROLY -->
     <section class="block" id="kontroly">
-      <div class="sec-head"><h2>Kontrola z úřadu a sankce</h2><span class="tag">daňový řád 280/2009 Sb.</span></div>
+      <div class="sec-head"><span class="sec-ic">🔍</span><h2>Kontrola z úřadu a sankce</h2><span class="tag">daňový řád 280/2009 Sb.</span></div>
       <div class="table-wrap item"><table>
         <thead><tr><th>Sankce</th><th>Výše</th><th>Kdy</th></tr></thead>
         <tbody>
@@ -741,9 +934,38 @@
       </ul></div></details>
     </section>
 
+
+    <!-- DOKUMENTY -->
+    <section class="block" id="dokumenty">
+      <div class="sec-head"><span class="sec-ic">📑</span><h2>Vzory dokumentů na pár kliknutí</h2><span class="tag">vyplň, zkopíruj, vytiskni</span></div>
+      <p class="intro">Vyber dokument, vyplň políčka a text se poskládá sám. Data zůstávají jen ve tvém prohlížeči. Vzory jsou obecné: u větších částek nebo sporů je nech zkontrolovat advokátem.</p>
+      <div class="calc item" id="gen" data-keywords="vzor upominka predzalobni vyzva plna moc vypoved najmu odstoupeni formular reklamace predavaci protokol dokument">
+        <div class="form-grid">
+          <div class="field" style="grid-column:1/-1;max-width:520px"><label for="g-typ">Jaký dokument potřebuješ?</label>
+            <select id="g-typ">
+              <option value="upominka">📨 Upomínka k zaplacení faktury</option>
+              <option value="vyzva">⚖️ Předžalobní výzva (§ 142a OSŘ)</option>
+              <option value="plnamoc">✍️ Plná moc</option>
+              <option value="najem">🏠 Výpověď nájmu prostor (nájemce)</option>
+              <option value="reklamace">🧾 Potvrzení o přijetí reklamace</option>
+              <option value="odstoupeni">↩️ Formulář pro odstoupení (pro e-shop)</option>
+              <option value="predani">🔧 Předávací protokol díla</option>
+            </select></div>
+        </div>
+        <div class="form-grid" id="g-fields"></div>
+        <div class="btn-row">
+          <button class="btn" id="g-copy" type="button">📋 Zkopírovat text</button>
+          <button class="btn ghost" id="g-print" type="button">🖨️ Vytisknout / PDF</button>
+          <button class="btn ghost" id="g-dl" type="button">⬇️ Stáhnout .txt</button>
+        </div>
+        <div id="g-note"></div>
+        <div class="doc-out" id="g-out"></div>
+      </div>
+    </section>
+
     <!-- KALENDAR -->
     <section class="block" id="kalendar">
-      <div class="sec-head"><h2>Kalendář termínů 2027</h2><span class="tag">termíny posunuté na pracovní dny</span></div>
+      <div class="sec-head"><span class="sec-ic">📅</span><h2>Kalendář termínů 2027</h2><span class="tag">termíny posunuté na pracovní dny</span></div>
       <ul class="timeline item">
         <li><span class="d">1. 1.<small>pátek</small></span><span>Start EET 2.0, nové zálohy, minimální mzda 24 900 Kč, návrat slevy na studenta.</span></li>
         <li><span class="d">11. 1.<small>pondělí</small></span><span>Paušální daň: vstup, změna pásma, vystoupení, přirážka EET OFF; oznámení o jiné výši paušální daně za rok 2026.</span></li>
@@ -769,7 +991,7 @@
 
     <!-- KALKULACKY -->
     <section class="block" id="kalkulacky">
-      <div class="sec-head"><h2>Kalkulačky</h2><span class="tag">orientační výpočty</span></div>
+      <div class="sec-head"><span class="sec-ic">🧮</span><h2>Kalkulačky</h2><span class="tag">orientační výpočty</span></div>
       <p class="intro">Výpočty běží jen ve tvém prohlížeči, nic se nikam neodesílá. Jsou zjednodušené a slouží k porovnání variant, ne jako podklad pro podání.</p>
 
       <!-- CALC OSVC -->
@@ -825,9 +1047,17 @@
       </div>
     </section>
 
+
+    <!-- KVIZ -->
+    <section class="block" id="kviz">
+      <div class="sec-head"><span class="sec-ic">🎯</span><h2>Kvíz: víš, jak na to?</h2><span class="tag">2 minuty</span></div>
+      <p class="intro">Deset otázek, na kterých se podnikatelé nejčastěji spálí. Po každé odpovědi uvidíš vysvětlení.</p>
+      <div class="calc item" id="quiz" data-keywords="kviz test otazky"></div>
+    </section>
+
     <!-- SLOVNIK -->
     <section class="block" id="slovnik">
-      <div class="sec-head"><h2>Slovníček</h2></div>
+      <div class="sec-head"><span class="sec-ic">📖</span><h2>Slovníček</h2></div>
       <dl class="gloss item">
         <dt>OSVČ</dt><dd>osoba samostatně výdělečně činná: živnostník nebo svobodné povolání</dd>
         <dt>IČO / DIČ</dt><dd>identifikační číslo osoby / daňové identifikační číslo (CZ + číslo)</dd>
@@ -858,7 +1088,7 @@
 
     <!-- ZDROJE -->
     <section class="block" id="zdroje">
-      <div class="sec-head"><h2>Užitečné odkazy a zdroje</h2></div>
+      <div class="sec-head"><span class="sec-ic">🔗</span><h2>Užitečné odkazy a zdroje</h2></div>
       <div class="links item">
         <a href="https://www.mojedane.cz" target="_blank" rel="noopener"><strong>Moje daně</strong><span>přiznání, paušální daň, EET, osobní daňový účet</span></a>
         <a href="https://financnisprava.gov.cz" target="_blank" rel="noopener"><strong>Finanční správa</strong><span>tiskopisy, informace, čísla účtů FÚ</span></a>
@@ -899,6 +1129,8 @@
 </footer>
 
 <button class="to-top" id="toTop" aria-label="Nahoru">↑</button>
+<div class="toast" id="toast"></div>
 <script src="app.js"></script>
+<script src="extra.js"></script>
 </body>
 </html>
