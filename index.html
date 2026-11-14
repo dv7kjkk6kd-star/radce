@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rádce podnikatele 2026/2027 – daně, účetnictví a právo pro OSVČ a malé firmy</title>
+<meta name="description" content="Srozumitelný průvodce pro české podnikatele: paušální daň, výdaje, odpisy, DPH, pojištění, EET 2.0, zaměstnanci, faktury, smlouvy, e-shop, GDPR, s.r.o. Kalkulačky a kalendář termínů 2027.">
+<meta name="theme-color" content="#1f6f5c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f6f5c'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EKč%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <button class="menu-btn" id="menuBtn" aria-label="Otevřít menu">☰</button>
+    <a class="brand" href="#top"><span class="brand-mark">Kč</span><span class="full">Rádce podnikatele</span></a>
+    <div class="search-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="search" type="search" placeholder="Hledej: paušál, odpisy auta, DPP, faktura, student…" autocomplete="off" aria-label="Hledat v průvodci">
+    </div>
+    <span class="search-count" id="searchCount"></span>
+  </div>
+</header>
+
+<div class="layout" id="top">
+  <aside class="sidebar" id="sidebar">
+    <nav id="toc">
+      <div class="group">Začátek</div>
+      <a href="#novinky">Co se mění od 2027</a>
+      <a href="#zacinam">Začínám podnikat</a>
+      <a href="#formy">OSVČ, nebo s.r.o.?</a>
+      <div class="group">Daně a odvody</div>
+      <a href="#pausalni-dan">Paušální daň</a>
+      <a href="#vydaje">Výdaje: co jde do nákladů</a>
+      <a href="#odpisy">Odpisy majetku</a>
+      <a href="#dph">DPH</a>
+      <a href="#pojisteni">Sociální a zdravotní</a>
+      <a href="#priznani">Přiznání, slevy, vratky</a>
+      <a href="#student">Student a brigády</a>
+      <a href="#eet">EET 2.0</a>
+      <div class="group">Firma a lidé</div>
+      <a href="#zamestnanci">Zaměstnanci a mzdy</a>
+      <a href="#faktury">Faktury a doklady</a>
+      <a href="#sro">s.r.o. – povinnosti</a>
+      <div class="group">Právo</div>
+      <a href="#smlouvy">Smlouvy a pohledávky</a>
+      <a href="#spotrebitele">E-shop, spotřebitelé, GDPR</a>
+      <a href="#kontroly">Kontrola z úřadu, sankce</a>
+      <div class="group">Nástroje</div>
+      <a href="#kalendar">Kalendář 2027</a>
+      <a href="#kalkulacky">Kalkulačky</a>
+      <a href="#slovnik">Slovníček</a>
+      <a href="#zdroje">Odkazy a zdroje</a>
+    </nav>
+  </aside>
+
+  <main id="content">
+
+    <!-- HERO -->
+    <div class="hero" id="hero">
+      <span class="stamp">Stav k 14. 11. 2026 · čísla pro roky 2026 a 2027</span>
+      <h1>Účetní a právník do kapsy</h1>
+      <p class="lead">Srozumitelné odpovědi na otázky, které řeší každý živnostník, malá i střední firma: kolik zaplatím, co si můžu dát do nákladů, jak odepisovat, kdy se stanu plátcem DPH, jak podat přiznání a dostat zpátky daně. Vždy s odkazem na zákon.</p>
+      <div class="tiles">
+        <div class="tile"><div class="v">9 662 Kč</div><div class="l">paušální daň 1. pásmo / měsíc (2027)</div></div>
+        <div class="tile"><div class="v">8 769 Kč</div><div class="l">minimální zálohy OSVČ hlavní / měsíc (2027)</div></div>
+        <div class="tile"><div class="v">11. 1. 2027</div><div class="l">přihláška k paušální dani a EET OFF</div></div>
+        <div class="tile"><div class="v">2 000 000 Kč</div><div class="l">obrat za kalendářní rok → plátce DPH</div></div>
+        <div class="tile"><div class="v">80 000 Kč</div><div class="l">hranice pro odpisování majetku</div></div>
+        <div class="tile"><div class="v">30 840 Kč</div><div class="l">sleva na poplatníka ročně</div></div>
+      </div>
+      <div class="quick">
+        <a class="chip" href="#calc-osvc">🧮 Vyplatí se mi paušální daň?</a>
+        <a class="chip" href="#calc-odpisy">🧮 Odpisová kalkulačka</a>
+        <a class="chip" href="#calc-sro">🧮 OSVČ vs. s.r.o.</a>
+        <a class="chip" href="#calc-mzda">🧮 Cena zaměstnance</a>
+        <a class="chip" href="#student">🎓 Daně pro studenty</a>
+        <a class="chip" href="#kalendar">📅 Termíny 2027</a>
+      </div>
+      <p class="muted" style="margin-top:16px;font-size:.88rem">Průvodce je informativní a nenahrazuje daňového poradce ani advokáta. Čísla se mění (někdy i zpětně), proto u důležitých rozhodnutí ověř aktuální stav na webu Finanční správy, ČSSZ nebo ve Sbírce zákonů.</p>
+    </div>
+
+    <!-- NOVINKY -->
+    <section class="block" id="novinky">
+      <div class="sec-head"><h2>Co se mění od 1. 1. 2027</h2><span class="tag">aktuality</span></div>
+      <p class="intro">Nejdůležitější změny, na které se připravit ještě letos.</p>
+      <div class="table-wrap item"><table>
+        <thead><tr><th>Změna</th><th>Co to znamená</th><th>Co udělat</th></tr></thead>
+        <tbody>
+          <tr><td><strong>EET 2.0</strong> <span class="law">z. č. 180/2026 Sb.</span></td><td>Eviduje se každá <em>kontaktní</em> platba: hotovost, karta nebo QR platba na místě, stravenky, poukázky. Převody na fakturu, platební brána e-shopu ani dobírka se neevidují. Tisk účtenek není povinný. Pokuta až 500 000 Kč.</td><td>Aktivuj evidenci v DIS+ na Moje daně, nahlas evidenční jednotky, nebo zvaž režim EET OFF. <a href="#eet">Více</a></td></tr>
+          <tr><td><strong>EET OFF</strong></td><td>OSVČ v 1. pásmu paušální daně s příjmy do 1 mil. Kč nemusí evidovat, když platí přirážku 1 400 Kč/měsíc (celkem 11 062 Kč měsíčně).</td><td>Přihlásit do <strong>11. 1. 2027</strong>, později to na rok 2027 nejde.</td></tr>
+          <tr><td><strong>Paušální daň</strong></td><td>1. pásmo 9 662 Kč (+500 Kč), 2. pásmo 16 745 Kč, 3. pásmo 27 139 Kč (beze změny).</td><td>Kdo zůstává ve stejném pásmu, jen upraví platbu od 20. 1. 2027.</td></tr>
+          <tr><td><strong>Minimální zálohy OSVČ</strong></td><td>Sociální 5 281 Kč, zdravotní 3 488 Kč (hlavní činnost). Průměrná mzda pro rok 2027 je 51 663 Kč (NV č. 177/2026 Sb.).</td><td>Uprav trvalé příkazy od ledna (sociální) a od února (zdravotní za leden).</td></tr>
+          <tr><td><strong>Minimální mzda</strong></td><td>24 900 Kč měsíčně, 148,30 Kč/hod.</td><td>Zkontroluj mzdy, DPP a DPČ (minimální hodinová odměna).</td></tr>
+          <tr><td><strong>Sleva na studenta a školkovné</strong></td><td>Vracejí se: sleva na studenta 4 020 Kč/rok (do 26 let, u prezenčního doktorského studia do 28 let).</td><td>Měsíčně u zaměstnavatele od ledna 2027, v ročním zúčtování nebo přiznání za rok 2027, tedy na jaře 2028.</td></tr>
+          <tr><td><strong>Limit pro podání přiznání</strong></td><td>Z 50 000 Kč na 100 000 Kč zdanitelných příjmů (u zaměstnanců s vedlejšími příjmy z 20 000 na 40 000 Kč). Paušalisté mají limit pro ostatní příjmy dál 50 000 Kč.</td><td>Týká se příjmů za rok 2027.</td></tr>
+          <tr><td><strong>DPP a DPČ</strong></td><td>Hranice pro odvody: DPP 12 500 Kč/měsíc, DPČ a zaměstnání malého rozsahu 5 000 Kč. Srážková daň se ruší, nahrazuje ji zálohová daň.</td><td>Uprav mzdový software a smlouvy s brigádníky.</td></tr>
+          <tr><td><strong>Vedlejší činnost</strong></td><td>Rozhodná částka pro sociální pojištění roste na 123 991 Kč zisku za rok.</td><td>Pod touto hranicí OSVČ vedlejší sociální pojištění neplatí.</td></tr>
+          <tr><td><strong>Spropitné</strong></td><td>Spropitné zaměstnanců je osvobozené od daně do 7 % tržeb (balíček k EET).</td><td>Ověř podmínky před nastavením výplat.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="note item"><strong>Rok 2026 ještě běží:</strong> novela zpětně snížila minimální zálohu na sociální pojištění na 5 005 Kč a 1. pásmo paušální daně na 9 162 Kč. Paušalisté v 1. pásmu mají za leden až červen přeplatek 4 932 Kč. Můžou si o něj snížit kteroukoli zálohu do konce roku 2026, nebo po skončení roku požádat o vrácení. Ostatní OSVČ mohou žádat ČSSZ o vrácení rozdílu do 31. 12. 2026.</div>
+    </section>
+
+    <!-- ZACINAM -->
+    <section class="block" id="zacinam">
+      <div class="sec-head"><h2>Začínám podnikat</h2><span class="tag">živnost krok za krokem</span></div>
+      <p class="intro">Jak se legálně stát podnikatelem během jednoho odpoledne.</p>
+      <ol class="steps item">
+        <li><strong>Vyber formu</strong>: živnost (OSVČ), nebo společnost (s.r.o.). Pro většinu začínajících je jednodušší a levnější živnost. <a href="#formy">Srovnání</a></li>
+        <li><strong>Ohlas živnost</strong> na kterémkoli živnostenském úřadě nebo online přes Portál občana. Použij <em>Jednotný registrační formulář (JRF)</em>: jedním podáním se přihlásíš i na finanční úřad, ČSSZ a zdravotní pojišťovnu. Správní poplatek za ohlášení je 1 000 Kč. <span class="law">z. č. 455/1991 Sb.</span></li>
+        <li><strong>Typ živnosti</strong>: <em>volná</em> (bez praxe), <em>řemeslná</em> (vyučení nebo praxe), <em>vázaná</em> (odborná způsobilost), <em>koncesovaná</em> (státní povolení). Svobodná povolání (lékař, advokát, daňový poradce, umělec) nejsou živnost, registruješ se jen na finančním úřadě a případně u komory.</li>
+        <li><strong>ČSSZ a zdravotní pojišťovna</strong>: zahájení činnosti oznam ČSSZ do 8. dne následujícího měsíce, pojišťovně do 8 dnů (pokud jsi to nevyřešil přes JRF).</li>
+        <li><strong>Datová schránka</strong>: OSVČ ji mají od roku 2023 zřízenou automaticky. Pravidelně ji kontroluj, protože zpráva se považuje za doručenou nejpozději 10. den po dodání, i když ji neotevřeš.</li>
+        <li><strong>Účet</strong>: zřiď si samostatný podnikatelský účet. Není povinný (plátci DPH ho musí zveřejnit), ale ohromně zjednoduší evidenci i případnou kontrolu.</li>
+        <li><strong>Způsob daní</strong>: paušální daň, výdajový paušál, nebo skutečné výdaje? <a href="#calc-osvc">Spočítej si to</a>.</li>
+        <li><strong>Zálohy</strong>: při hlavní činnosti platíš minimální zálohy od prvního měsíce. Začínající OSVČ (v posledních 20 letech nepodnikali na hlavní činnost) mají první 3 roky nižší minimum sociálního pojištění: 2026 3 575 Kč, 2027 přibližně 3 772 Kč (ověř na ČSSZ). Při vedlejší činnosti se v prvním roce zálohy neplatí.</li>
+      </ol>
+      <details class="qa item"><summary>Jaký je rozdíl mezi hlavní a vedlejší činností?</summary><div class="a">
+        <p>Vedlejší činnost máš, když vedle podnikání jsi zaměstnaný (s účastí na pojištění), studuješ do 26 let, pobíráš rodičovský příspěvek nebo mateřskou, jsi starobní či invalidní důchodce nebo pečuješ o osobu blízkou. Všechno ostatní je hlavní činnost.</p>
+        <p>Rozdíl je hlavně v penězích: hlavní činnost platí minimální zálohy i při nulovém zisku. Vedlejší činnost platí sociální pojištění jen nad rozhodnou částkou zisku (2026: 117 521 Kč, 2027: 123 991 Kč) a zdravotní jen z reálného zisku, bez minima. <span class="law">§ 9 z. č. 155/1995 Sb.</span></p>
+      </div></details>
+      <details class="qa item"><summary>Můžu podnikat při zaměstnání?</summary><div class="a">
+        <p>Ano. Pozor jen na zákaz konkurence: podnikat ve stejném oboru jako zaměstnavatel smíš jen s jeho předchozím písemným souhlasem <span class="law">§ 304 zákoníku práce</span>. Podnikání při zaměstnání je vedlejší činnost. Paušální daň v tomto případě obvykle použít nemůžeš.</p>
+      </div></details>
+      <details class="qa item"><summary>Kde můžu mít sídlo? Musím mít provozovnu?</summary><div class="a">
+        <p>Sídlem OSVČ je obvykle adresa trvalého bydliště. Můžeš si zvolit i jinou adresu, například virtuální sídlo, s doloženým souhlasem vlastníka. Provozovna (místo, kde se prodává nebo poskytují služby zákazníkům) se musí ohlásit živnostenskému úřadu předem a označit jménem, IČO a odpovědnou osobou.</p>
+      </div></details>
+      <details class="qa item"><summary>Co když chci podnikání na čas přerušit?</summary><div class="a">
+        <p>Přerušení ohlas živnostenskému úřadu (lze i zpětně jen výjimečně, tak to dělej včas) a ČSSZ a zdravotní pojišťovně. Po dobu přerušení neplatíš zálohy OSVČ. <strong>Pozor:</strong> pokud nejsi zaměstnaný, student ani státní pojištěnec, musíš platit zdravotní pojištění jako osoba bez zdanitelných příjmů (2026: 3 024 Kč měsíčně, 2027: 3 362 Kč). Přiznání a přehledy za období, kdy jsi podnikal, podáváš normálně.</p>
+      </div></details>
+      <details class="qa item"><summary>Potřebuju účetní?</summary><div class="a">
+        <p>OSVČ s paušální daní nebo výdajovým paušálem obvykle ne: stačí evidence příjmů a hlídání limitů. Při skutečných výdajích (daňová evidence), u plátců DPH, zaměstnavatelů a vždy u s.r.o. (podvojné účetnictví) se účetní nebo daňový poradce vyplatí. Daňový poradce navíc prodlužuje lhůtu pro přiznání do 1. 7. a za své chyby odpovídá (má povinné pojištění).</p>
+      </div></details>
+    </section>
+
+    <!-- FORMY -->
+    <section class="block" id="formy">
+      <div class="sec-head"><h2>OSVČ, nebo s.r.o.?</h2><span class="tag">právní forma</span></div>
+      <div class="table-wrap item"><table>
+        <thead><tr><th></th><th>OSVČ (živnost)</th><th>s.r.o.</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Založení</strong></td><td>Online, 1 000 Kč, do pár dnů</td><td>Notářský zápis, zápis do obchodního rejstříku, živnost. Orientačně jednotky až nižší desítky tisíc Kč. Základní kapitál od 1 Kč.</td></tr>
+          <tr><td><strong>Ručení</strong></td><td>Celým osobním majetkem (za určitých podmínek i společným jměním manželů)</td><td>Společnost ručí svým majetkem, společník do výše nesplaceného vkladu. Jednatel ale odpovídá za péči řádného hospodáře <span class="law">§ 159 OZ, § 51 ZOK</span>.</td></tr>
+          <tr><td><strong>Daň z příjmů</strong></td><td>15 % ze zisku, nad 1 762 812 Kč (2026) / 1 859 868 Kč (2027) 23 %. Slevy na poplatníka a děti.</td><td>21 % ze zisku firmy, pak 15 % srážková daň z vyplaceného podílu na zisku. Efektivně kolem 32,85 %.</td></tr>
+          <tr><td><strong>Pojistné</strong></td><td>Sociální 29,2 % z 55 % zisku, zdravotní 13,5 % z 50 % zisku, minimálně minimální zálohy</td><td>Z podílu na zisku se pojistné neplatí. Ze mzdy jednatele ano. Bez jiného příjmu platíš zdravotní pojištění jako OBZP.</td></tr>
+          <tr><td><strong>Administrativa</strong></td><td>Paušální daň: skoro žádná. Paušál: přiznání a 2 přehledy. Skutečné výdaje: daňová evidence.</td><td>Podvojné účetnictví, účetní závěrka zveřejněná ve Sbírce listin, valná hromada, evidence skutečných majitelů</td></tr>
+          <tr><td><strong>Peníze pro sebe</strong></td><td>Peníze z účtu si můžeš kdykoli vzít, jsou tvoje.</td><td>Jen mzda, podíl na zisku (po schválení), náhrady. Volné braní peněz z firmy je problém daňový i právní.</td></tr>
+          <tr><td><strong>Vhodné pro</strong></td><td>Začátky, služby, freelancing, nízké až střední zisky</td><td>Vysoké zisky, rizikové obory (odpovědnost), více společníků, investoři, plán prodeje firmy, reinvestování zisku</td></tr>
+        </tbody>
+      </table></div>
+      <div class="tip item">Hrubé pravidlo: při ročním zisku do zhruba 1,5 až 2 mil. Kč vychází OSVČ (často s výdajovým paušálem nebo paušální daní) levněji a jednodušeji. Výhodnost s.r.o. roste s vyšším ziskem a s tím, kolik peněz necháš ve firmě. <a href="#calc-sro">Spočítej si to na svých číslech.</a></div>
+    </section>
+
+    <!-- PAUSALNI DAN -->
+    <section class="block" id="pausalni-dan">
+      <div class="sec-head"><h2>Paušální daň</h2><span class="tag">§ 2a, § 7a, § 38lb a násl. ZDP</span></div>
+      <p class="intro">Jedna měsíční platba za daň, sociální a zdravotní pojištění. Žádné daňové přiznání ani přehledy pro ČSSZ a pojišťovnu.</p>
+      <div class="table-wrap item"><table>
+        <thead><tr><th>Pásmo</th><th>Kdo do něj patří (příjmy z podnikání)</th><th class="num">2026 měsíčně</th><th class="num">2027 měsíčně</th><th>2027: daň / soc. / zdrav.</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1.</strong></td><td>do 1 mil. Kč (jakýkoli obor); do 1,5 mil. Kč, pokud aspoň 75 % příjmů má paušál 60 % nebo 80 %; do 2 mil. Kč, pokud aspoň 75 % příjmů má paušál 80 %</td><td class="num">9 162 Kč*</td><td class="num">9 662 Kč</td><td>100 / 6 074 / 3 488 Kč</td></tr>
+          <tr><td><strong>1. + EET OFF</strong></td><td>1. pásmo a příjmy do 1 mil. Kč; nemusíš evidovat tržby</td><td class="num">–</td><td class="num">11 062 Kč</td><td>1 500 / 6 074 / 3 488 Kč</td></tr>
+          <tr><td><strong>2.</strong></td><td>do 1,5 mil. Kč (jakýkoli obor); do 2 mil. Kč, pokud aspoň 75 % příjmů má paušál 60 % nebo 80 %</td><td class="num">16 745 Kč</td><td class="num">16 745 Kč</td><td>4 963 / 8 191 / 3 591 Kč</td></tr>
+          <tr><td><strong>3.</strong></td><td>do 2 mil. Kč (jakýkoli obor)</td><td class="num">27 139 Kč</td><td class="num">27 139 Kč</td><td>9 320 / 12 527 / 5 292 Kč</td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted" style="font-size:.88rem">* V lednu až červnu 2026 se platilo 9 984 Kč. Novela snížila platbu zpětně od 1. 1. 2026 a vzniklý přeplatek 4 932 Kč jde započíst na další zálohy nebo nechat vrátit po skončení roku.</p>
+
+      <div class="cols item">
+        <div class="col yes"><h4>✅ Podmínky pro vstup</h4><ul>
+          <li>OSVČ s příjmy z podnikání do 2 mil. Kč za rok</li>
+          <li>nejsi plátce DPH (identifikovaná osoba nevadí)</li>
+          <li>nevedeš účetnictví, nejsi v insolvenci</li>
+          <li>nejsi společník v.o.s. ani komplementář k.s.</li>
+          <li>ostatní příjmy (nájem, kapitálové, ostatní) max. 50 000 Kč</li>
+          <li>nemáš příjmy ze zaměstnání (s výjimkami pro drobné příjmy, od 2027 se tolerance rozšiřuje; ověř)</li>
+        </ul></div>
+        <div class="col no"><h4>❌ Na co v paušálním režimu zapomeň</h4><ul>
+          <li>sleva na děti, manžela/manželku, studenta, odpočty hypotéky či penzijka (neuplatníš je)</li>
+          <li>vyšší důchod: platíš jen minimum sociálního pojištění (v 1. pásmu)</li>
+          <li>doložení příjmu bance je složitější (nemáš přiznání, předkládáš výpisy)</li>
+          <li>když se staneš plátcem DPH nebo překročíš 2 mil. Kč, režim končí a podáváš přiznání</li>
+        </ul></div>
+      </div>
+
+      <details class="qa item"><summary>Vyplatí se mi paušální daň?</summary><div class="a">
+        <p>Vyplatí se těm, kdo mají <strong>nízké skutečné výdaje a nižší výdajový paušál</strong> (40 % nebo 60 %), příjmy těsně pod horní hranicí pásma a nemají děti, na které by uplatnili slevu. Podle výpočtů pro rok 2027 (jen sleva na poplatníka) se 1. pásmo začíná vyplácet zhruba od zisku 277 000 Kč, tedy příjmů kolem 690 000 Kč při 60% paušálu, 460 000 Kč při 40% paušálu a 1,385 mil. Kč při 80% paušálu. Řemeslníkům s 80% paušálem a nízkými příjmy se paušální daň obvykle nevyplatí.</p>
+        <p><strong>Studentům a jiné vedlejší činnosti se téměř nikdy nevyplatí</strong>: v režimu platíš plné pojistné jako hlavní činnost, i když bys jinak (pod rozhodnou částkou) sociální neplatil vůbec.</p>
+        <p><a href="#calc-osvc">→ Otevřít kalkulačku</a></p>
+      </div></details>
+      <details class="qa item"><summary>Jak se přihlásit, změnit pásmo nebo odejít?</summary><div class="a">
+        <ol>
+          <li>Přes <a href="https://www.mojedane.cz" target="_blank" rel="noopener">Moje daně</a> podej <em>Oznámení o vstupu do paušálního režimu</em> (případně o změně pásma, o vystoupení nebo o přihlášení k přirážce EET OFF).</li>
+          <li>Termín je do 10. ledna. Pro rok 2027 je to <strong>pondělí 11. 1. 2027</strong>, protože 10. 1. je neděle. Pozdní oznámení je neúčinné.</li>
+          <li>Plať zálohu do 20. dne každého měsíce na účet svého finančního úřadu (každý FÚ má vlastní číslo účtu, variabilní symbol je tvoje DIČ bez CZ nebo rodné číslo; ověř na webu FS).</li>
+          <li>Kdo v režimu pokračuje ve stejném pásmu, nic nového nepodává, jen upraví výši platby.</li>
+        </ol>
+        <p>Pásmo se určuje podle příjmů za <em>předchozí</em> rok. Vyšší pásmo si může zvolit každý. Kdo začíná podnikat, volí podle odhadu.</p>
+      </div></details>
+      <details class="qa item"><summary>Co když během roku vydělám víc nebo míň, než odpovídá pásmu?</summary><div class="a">
+        <ul>
+          <li><strong>Víc, ale do 2 mil. Kč:</strong> do 10. ledna dalšího roku podáš <em>Oznámení o jiné výši paušální daně</em> a doplatíš rozdíl do vyššího pásma, nebo podáš klasické přiznání a přehledy.</li>
+          <li><strong>Míň:</strong> zpětně můžeš do stejného termínu přejít do nižšího pásma, pokud to tvoje skutečné příjmy umožňují. Rozdíl se vrátí jako přeplatek.</li>
+          <li><strong>Nad 2 mil. Kč, plátce DPH nebo jiná porušená podmínka:</strong> režim končí, za rok podáš přiznání a přehledy a zaplacené paušální zálohy se započtou.</li>
+        </ul>
+      </div></details>
+    </section>
+
+    <!-- VYDAJE -->
+    <section class="block" id="vydaje">
+      <div class="sec-head"><h2>Výdaje: co si můžu dát do nákladů</h2><span class="tag">§ 7, § 24, § 25 ZDP</span></div>
+      <h3>4 způsoby, jak uplatnit výdaje</h3>
+      <div class="table-wrap item"><table>
+        <thead><tr><th>Způsob</th><th>Jak funguje</th><th>Pro koho</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Paušální daň</strong></td><td>Pevná měsíční platba, výdaje se neřeší</td><td>Hlavní činnost, nízké náklady, bez dětí</td></tr>
+          <tr><td><strong>Výdajový paušál</strong></td><td>Od příjmů odečteš procento podle oboru. Účtenky do daní nepotřebuješ.</td><td>Skutečné výdaje nižší než paušál, chceš uplatnit slevy (děti, hypotéka)</td></tr>
+          <tr><td><strong>Daňová evidence</strong></td><td>Skutečné výdaje doložené doklady, evidence majetku, pohledávek a závazků</td><td>E-shopy, výroba, velké investice, výdaje nad paušálem</td></tr>
+          <tr><td><strong>Účetnictví</strong></td><td>Podvojné účetnictví</td><td>Povinně s.r.o. a a.s.; OSVČ zapsaná v obchodním rejstříku nebo s obratem nad 25 mil. Kč; jinak dobrovolně</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Výdajové paušály <span class="law">§ 7 odst. 7, § 9 odst. 4 ZDP</span></h3>
+      <div class="table-wrap item"><table>
+        <thead><tr><th class="num">Paušál</th><th>Činnost</th><th class="num">Max. výdaje</th><th>Příklady</th></tr></thead>
+        <tbody>
+          <tr><td class="num"><strong>80 %</strong></td><td>řemeslné živnosti, zemědělství, lesnictví</td><td class="num">1 600 000 Kč</td><td>truhlář, instalatér, elektrikář, kadeřnice, zedník</td></tr>
+          <tr><td class="num"><strong>60 %</strong></td><td>ostatní živnosti (volné, vázané, koncesované)</td><td class="num">1 200 000 Kč</td><td>programátor, grafik, obchod, marketing, účetní, IT konzultant</td></tr>
+          <tr><td class="num"><strong>40 %</strong></td><td>jiné podnikání podle zvláštních předpisů, svobodná povolání, autorské příjmy</td><td class="num">800 000 Kč</td><td>lékař, advokát, tlumočník, znalec, autor, umělec</td></tr>
+          <tr><td class="num"><strong>30 %</strong></td><td>nájem</td><td class="num">600 000 Kč</td><td>pronájem bytu nebo nebytových prostor</td></tr>
+        </tbody>
+      </table></div>
+      <div class="note item">Paušál pokrývá <strong>všechny</strong> výdaje: materiál, auto, telefon, odpisy, mzdy. Nic dalšího k němu nepřičteš. Pojistné OSVČ se neodečítá nikdy. Slevu na děti i na manžela/manželku <strong>při paušálu uplatnit můžeš</strong> (omezení platilo jen do roku 2017).</div>
+
+      <h3>Skutečné výdaje: co ano a co ne</h3>
+      <div class="cols item">
+        <div class="col yes"><h4>✅ Typicky daňově uznatelné</h4><ul>
+          <li>materiál, zboží, nájem provozovny, energie (u bytu poměrem)</li>
+          <li>telefon a internet poměrem k podnikání</li>
+          <li>software, předplatné nástrojů, web, hosting</li>
+          <li>majetek do 80 000 Kč (notebook, telefon) rovnou do nákladů</li>
+          <li>odpisy dražšího majetku</li>
+          <li>účetní, daňový poradce, bankovní poplatky, pojištění podnikání</li>
+          <li>školení a kurzy související s činností (udržení či zvýšení kvalifikace)</li>
+          <li>mzdy a pojistné za zaměstnance, stravenkový paušál</li>
+          <li>cestovní výdaje při pracovní cestě (jízdné, ubytování)</li>
+          <li>reklama, marketing, reklamní předměty do 500 Kč bez DPH s logem</li>
+          <li>pracovní oděv a ochranné pomůcky</li>
+        </ul></div>
+        <div class="col no"><h4>❌ Typicky neuznatelné</h4><ul>
+          <li>reprezentace: pohoštění a dárky obchodním partnerům <span class="law">§ 25 odst. 1 písm. t)</span></li>
+          <li>vlastní sociální a zdravotní pojistné OSVČ</li>
+          <li>„mzda“ OSVČ sama sobě</li>
+          <li>pokuty, penále, úroky z prodlení vůči státu</li>
+          <li>soukromá spotřeba, běžné oblečení, dovolená</li>
+          <li>soukromé jízdy autem (jen poměrná část)</li>
+          <li>daň z příjmů sama</li>
+          <li>výdaje bez dokladu</li>
+        </ul></div>
+      </div>
+      <details class="qa item"><summary>Jak dát do nákladů auto?</summary><div class="a">
+        <p>Máš tři možnosti:</p>
+        <ol>
+          <li><strong>Auto v obchodním majetku:</strong> odpisy (2. skupina, 5 let, vstupní cena max. 2 mil. Kč) + skutečné výdaje (PHM podle dokladů, servis, pojištění, dálniční známka). Při soukromém užití se výdaje krátí poměrem podle <em>knihy jízd</em>.</li>
+          <li><strong>Paušální výdaj na dopravu</strong> <span class="law">§ 24 odst. 2 písm. zt)</span>: 5 000 Kč měsíčně na vozidlo, max. 3 vozidla. Při kombinaci se soukromým užitím krácený na 80 % (4 000 Kč). K tomu lze uplatnit parkovné, ale ne PHM. Kniha jízd se nevede.</li>
+          <li><strong>Soukromé auto použité na pracovní cestu:</strong> náhrada jako zaměstnanci, tedy sazba za km (2026: 5,90 Kč/km) + PHM podle průměrné ceny nebo dokladu. Nutná evidence jízd.</li>
+        </ol>
+      </div></details>
+      <details class="qa item"><summary>Pracuju z domova. Můžu si dát do nákladů část bytu?</summary><div class="a">
+        <p>Ano, poměrnou část nájmu, energií a internetu podle plochy, kterou používáš výhradně k podnikání. Výpočet si sepiš a uchovej. Pozor: když si do nákladů dáváš část <em>vlastního</em> bytu nebo ho máš v obchodním majetku, může to později komplikovat osvobození při jeho prodeji. Před takovým krokem se poraď.</p>
+      </div></details>
+      <details class="qa item"><summary>Notebook za 45 000 Kč: odpis, nebo hned do nákladů?</summary><div class="a">
+        <p>Hmotný majetek se vstupní cenou do 80 000 Kč (u plátce DPH bez DPH) jde při skutečných výdajích rovnou do nákladů v roce pořízení. Nad 80 000 Kč se odpisuje. <a href="#odpisy">Odpisy</a></p>
+      </div></details>
+      <details class="qa item"><summary>Můžu si dát do nákladů oběd s klientem nebo dárek?</summary><div class="a">
+        <p>Ne, jde o reprezentaci, která je daňově neuznatelná. Výjimkou jsou reklamní předměty s logem do 500 Kč bez DPH za kus (ne alkohol a tabák). Pohoštění na vlastním školení pro zaměstnance je jiná situace.</p>
+      </div></details>
+      <details class="qa item"><summary>Jak dlouho musím doklady schovávat?</summary><div class="a"><p>Viz <a href="#faktury">Faktury a doklady</a>. V praxi doporučujeme 10 let.</p></div></details>
+    </section>
+
+    <!-- ODPISY -->
+    <section class="block" id="odpisy">
+      <div class="sec-head"><h2>Odpisy majetku</h2><span class="tag">§ 26–33 ZDP</span></div>
+      <p class="intro">Dražší majetek se do nákladů nedává najednou, ale rozloží se na několik let.</p>
+      <div class="cols item">
+        <div class="col yes"><h4>Co se odpisuje</h4><ul>
+          <li>hmotné movité věci s dobou použitelnosti nad 1 rok a vstupní cenou <strong>nad 80 000 Kč</strong></li>
+          <li>budovy, stavby, byty (bez ohledu na cenu)</li>
+          <li>technické zhodnocení nad 80 000 Kč za rok u jednoho majetku (zvyšuje vstupní cenu)</li>
+        </ul></div>
+        <div class="col no"><h4>Co se neodpisuje</h4><ul>
+          <li>pozemky, zásoby, pohledávky, finanční majetek</li>
+          <li>majetek do 80 000 Kč: jde rovnou do nákladů</li>
+          <li>u výdajového paušálu a paušální daně: odpisy se jen „fiktivně“ evidují, žádný výdaj navíc</li>
+          <li>nedokončený majetek (dokud se nezačne používat)</li>
+        </ul></div>
+      </div>
+      <div class="table-wrap item"><table>
+        <thead><tr><th>Skupina</th><th class="num">Doba</th><th>Příklady</th><th class="num">Rovnoměrně 1. rok / další</th><th class="num">Zrychleně koeficient 1. rok / další</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1</strong></td><td class="num">3 roky</td><td>počítače nad limit, servery, kancelářské stroje, nářadí</td><td class="num">20 % / 40 %</td><td class="num">3 / 4</td></tr>
+          <tr><td><strong>2</strong></td><td class="num">5 let</td><td>osobní a nákladní auta, nábytek, většina strojů, kamerový systém</td><td class="num">11 % / 22,25 %</td><td class="num">5 / 6</td></tr>
+          <tr><td><strong>3</strong></td><td class="num">10 let</td><td>těžší stroje a technologie, kotle, výtahy, trezory</td><td class="num">5,5 % / 10,5 %</td><td class="num">10 / 11</td></tr>
+          <tr><td><strong>4</strong></td><td class="num">20 let</td><td>dřevěné a lehké stavby, potrubí, rozvody</td><td class="num">2,15 % / 5,15 %</td><td class="num">20 / 21</td></tr>
+          <tr><td><strong>5</strong></td><td class="num">30 let</td><td>většina budov a staveb</td><td class="num">1,4 % / 3,4 %</td><td class="num">30 / 31</td></tr>
+          <tr><td><strong>6</strong></td><td class="num">50 let</td><td>administrativní budovy, hotely, obchodní domy</td><td class="num">1,02 % / 2,02 %</td><td class="num">50 / 51</td></tr>
+        </tbody>
+      </table></div>
+      <div class="note item">
+        <p><strong>Rovnoměrně:</strong> 1. rok = vstupní cena × sazba pro 1. rok; další roky = vstupní cena × sazba pro další roky.</p>
+        <p><strong>Zrychleně:</strong> 1. rok = vstupní cena ÷ koeficient pro 1. rok; další roky = 2 × zůstatková cena ÷ (koeficient pro další roky − počet let, kdy už se odpisovalo).</p>
+        <p>Odpis se zaokrouhluje na celé koruny nahoru. V roce pořízení se uplatní celý roční odpis bez ohledu na měsíc. Způsob (rovnoměrně / zrychleně) zvolíš při zařazení a pak ho neměníš.</p>
+        <p><strong>Příklad:</strong> auto za 350 000 Kč, 2. skupina, rovnoměrně: 1. rok 38 500 Kč, další 4 roky po 77 875 Kč.</p>
+      </div>
+      <details class="qa item"><summary>Můžu odpisy přerušit, když mám v daném roce malý zisk?</summary><div class="a">
+        <p>Ano. Daňové odpisy jsou právo, ne povinnost. Když by kvůli odpisu výsledek klesl pod úroveň, kde už nevyužiješ slevy, můžeš odpis v daném roce neuplatnit. Doba odpisování se tím prodlouží a odpis se „neztratí“.</p>
+      </div></details>
+      <details class="qa item"><summary>Jaký je limit u aut?</summary><div class="a"><p>U osobních aut (kategorie M1) se od roku 2024 odpisuje maximálně ze vstupní ceny 2 000 000 Kč. Nad tento limit už odpis do nákladů nejde.</p></div></details>
+      <details class="qa item"><summary>Co je technické zhodnocení a co oprava?</summary><div class="a">
+        <p>Oprava vrací majetek do původního stavu (výměna rozbitého dílu) a jde rovnou do nákladů. Technické zhodnocení přidává něco nového: nástavba, přístavba, modernizace, rozšíření vybavení. Pokud jeho výdaje u jednoho majetku za rok přesáhnou 80 000 Kč, zvyšuje vstupní cenu a odpisuje se. Do této částky se můžeš rozhodnout, jestli ho dáš do nákladů, nebo budeš odpisovat. <span class="law">§ 33 ZDP</span></p>
+      </div></details>
+      <details class="qa item"><summary>A software, web, licence?</summary><div class="a"><p>Nehmotný majetek (software, web, know-how) se od roku 2021 daňově neodpisuje podle odpisových skupin. U daňové evidence se výdaj obvykle uplatní jednorázově, v účetnictví podle účetních odpisů. U konkrétního případu (vyvinutý software, licence na dobu určitou) si pravidla ověř nebo se poraď.</p></div></details>
+      <p><a href="#calc-odpisy">→ Odpisová kalkulačka s rozpisem po letech</a></p>
+    </section>
+
+    <!-- DPH -->
+    <section class="block" id="dph">
+      <div class="sec-head"><h2>DPH</h2><span class="tag">z. č. 235/2004 Sb.</span></div>
+      <div class="table-wrap item"><table>
+        <thead><tr><th>Situace</th><th>Kdy se stáváš plátcem</th><th>Přihláška</th></tr></thead>
+        <tbody>
+          <tr><td>Obrat za <strong>kalendářní rok</strong> přesáhne 2 000 000 Kč</td><td>od 1. 1. následujícího roku</td><td>do 10 pracovních dnů od překročení</td></tr>
+          <tr><td>Obrat přesáhne 2 536 500 Kč (100 000 EUR)</td><td>hned následující den</td><td>do 10 pracovních dnů od překročení</td></tr>
+          <tr><td>Dobrovolná registrace</td><td>dnem uvedeným v rozhodnutí FÚ</td><td>kdykoli</td></tr>
+        </tbody>
+      </table></div>
+      <div class="cols item">
+        <div class="col yes"><h4>Plátce DPH může</h4><ul>
+          <li>odečíst DPH z nákupů (nárok na odpočet)</li>
+          <li>být konkurenceschopnější vůči jiným plátcům (B2B)</li>
+          <li>po prvních dvou letech přejít na čtvrtletní období, pokud obrat nepřesáhl 15 mil. Kč</li>
+        </ul></div>
+        <div class="col no"><h4>Plátce DPH musí</h4><ul>
+          <li>přičítat 21 % nebo 12 % DPH (spotřebitelům zdražuje)</li>
+          <li>podávat přiznání a kontrolní hlášení do 25. dne po skončení období</li>
+          <li>vystavit daňový doklad do 15 dnů</li>
+          <li>zveřejnit bankovní účet; komunikovat elektronicky</li>
+          <li>odejít z paušální daně</li>
+        </ul></div>
+      </div>
+      <details class="qa item"><summary>Co se počítá do obratu?</summary><div class="a"><p>Úplata za zdanitelná plnění a plnění osvobozená s nárokem na odpočet, včetně přijatých záloh. Nezapočítává se prodej dlouhodobého majetku a většina osvobozených plnění bez nároku na odpočet (výjimky: např. finanční služby a nájem nemovitostí, pokud nejsou doplňkové). Sleduje se součet za kalendářní rok (od 1. 1. do 31. 12.).</p></div></details>
+      <details class="qa item"><summary>Kupuju reklamu na Googlu / Meta nebo pracuju pro klienty z EU. Týká se mě DPH?</summary><div class="a">
+        <p>Ano, i jako neplátce. Když přijmeš službu od podnikatele z jiného státu EU (Google Ads, Meta, Canva, freelance služby) nebo službu do EU poskytneš, stáváš se <strong>identifikovanou osobou</strong>. Musíš se registrovat do 15 dnů, z přijatých služeb přiznat a zaplatit českou DPH (bez nároku na odpočet) a u poskytnutých služeb podávat souhrnné hlášení. Paušální daň to nevylučuje.</p>
+      </div></details>
+      <details class="qa item"><summary>Prodávám spotřebitelům do jiných zemí EU (e-shop). Co OSS?</summary><div class="a"><p>Pokud součet prodejů na dálku spotřebitelům do jiných států EU přesáhne 10 000 EUR za rok, platíš DPH státu zákazníka. Nemusíš se registrovat v každém státě: použiješ zvláštní režim jednoho správního místa (OSS) a podáváš čtvrtletní přiznání v ČR.</p></div></details>
+      <details class="qa item"><summary>Pokuty za kontrolní hlášení</summary><div class="a">
+        <ul>
+          <li>1 000 Kč: pozdní podání bez výzvy</li>
+          <li>10 000 Kč: pozdní podání následného KH nebo reakce na výzvu</li>
+          <li>30 000 Kč: nesplnění povinnosti na výzvu (změna nebo potvrzení údajů)</li>
+          <li>50 000 Kč: nepodání ani na výzvu; při závažném porušení až 500 000 Kč</li>
+        </ul>
+        <p><span class="law">§ 101h zákona o DPH</span>. Pokutu 1 000 Kč finanční úřad za určitých podmínek nepředepíše jednou za rok (drobné zpoždění), ověř aktuální znění.</p>
+      </div></details>
+      <details class="qa item"><summary>Přenesená daňová povinnost (stavebnictví)</summary><div class="a"><p>Při stavebních a montážních pracích (kódy CZ-CPA 41–43) mezi plátci odvádí DPH odběratel, ne dodavatel. Na faktuře uvádíš „daň odvede zákazník“ a DPH nepočítáš. <span class="law">§ 92e zákona o DPH</span></p></div></details>
+      <details class="qa item"><summary>Vyplatí se dobrovolná registrace?</summary><div class="a"><p>Většinou jen, když máš převážně klienty plátce DPH (B2B), velké nákupy s DPH (investice, technika, auto, zboží) nebo potřebuješ status plátce kvůli image či zakázkám. Pokud prodáváš hlavně lidem (B2C), zdražíš se o 21 % nebo ti klesne marže.</p></div></details>
+    </section>
+
+    <!-- POJISTENI -->
+    <section class="block" id="pojisteni">
+      <div class="sec-head"><h2>Sociální a zdravotní pojištění OSVČ</h2><span class="tag">z. č. 589/1992 Sb., 592/1992 Sb.</span></div>
+      <div class="table-wrap item"><table>
+        <thead><tr><th>Parametr</th><th class="num">2026</th><th class="num">2027</th></tr></thead>
+        <tbody>
+          <tr><td>Sazba sociálního pojištění</td><td class="num" colspan="2">29,2 % z vyměřovacího základu (55 % zisku)</td></tr>
+          <tr><td>Sazba zdravotního pojištění</td><td class="num" colspan="2">13,5 % z vyměřovacího základu (50 % zisku)</td></tr>
+          <tr><td>Minimální záloha sociální – hlavní činnost</td><td class="num">5 005 Kč*</td><td class="num">5 281 Kč</td></tr>
+          <tr><td>Minimální záloha sociální – začínající OSVČ (první 3 roky)</td><td class="num">3 575 Kč</td><td class="num">≈ 3 772 Kč (ověř)</td></tr>
+          <tr><td>Minimální záloha sociální – vedlejší (pokud platíš)</td><td class="num">1 574 Kč</td><td class="num">≈ 1 660 Kč</td></tr>
+          <tr><td>Minimální záloha zdravotní – hlavní činnost</td><td class="num">3 306 Kč</td><td class="num">3 488 Kč</td></tr>
+          <tr><td>Rozhodná částka pro vedlejší činnost (zisk za rok)</td><td class="num">117 521 Kč</td><td class="num">123 991 Kč</td></tr>
+          <tr><td>Maximální vyměřovací základ (sociální)</td><td class="num">2 350 416 Kč</td><td class="num">≈ 2,48 mil. Kč</td></tr>
+          <tr><td>Zdravotní pojištění OBZP (bez příjmů)</td><td class="num">3 024 Kč</td><td class="num">3 362 Kč</td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted" style="font-size:.88rem">* Do června 2026 se platilo 5 720 Kč, novela minimum zpětně snížila. Zdravotní pojištění nemá horní strop.</p>
+      <details class="qa item"><summary>Kdy a jak se zálohy platí?</summary><div class="a">
+        <ul>
+          <li><strong>Sociální:</strong> do konce kalendářního měsíce, za který se platí (lednová do 31. 1.), na účet okresní správy sociálního zabezpečení.</li>
+          <li><strong>Zdravotní:</strong> do 8. dne následujícího měsíce (lednová do 8. 2.).</li>
+          <li>Výše záloh vychází z přehledu za minulý rok. Nové zálohy platíš od měsíce, kdy podáš přehled.</li>
+          <li><strong>Přehledy</strong> ČSSZ a zdravotní pojišťovně podáváš do 1 měsíce od lhůty pro podání daňového přiznání; doplatek zaplatíš do 8 dnů od podání přehledu.</li>
+        </ul>
+      </div></details>
+      <details class="qa item"><summary>Platím jako OSVČ nemocenské?</summary><div class="a"><p>Nemocenské pojištění je pro OSVČ dobrovolné. Bez něj nemáš nárok na nemocenskou ani na peněžitou pomoc v mateřství (u OSVČ podmíněnou alespoň 270 dny účasti v posledních 2 letech). Minimální platba je v řádu stovek korun měsíčně (2026 zhruba 243 Kč). Přihlášku podáš přes ePortál ČSSZ.</p></div></details>
+      <details class="qa item"><summary>Vyplatí se platit víc než minimum?</summary><div class="a"><p>Vyšší sociální pojištění znamená vyšší budoucí důchod. Minimální zálohy znamenají důchod blízko minima. Je to tvoje volba. Alternativou je soukromé spoření (penzijko, investice). Rozhodni se vědomě, ne podle toho, „co se nosí“.</p></div></details>
+      <details class="qa item"><summary>Jsem OSVČ vedlejší (zaměstnanec, student, rodičovská). Co platím?</summary><div class="a">
+        <ul>
+          <li><strong>Sociální:</strong> nic, pokud zisk za rok nepřesáhne rozhodnou částku (2026: 117 521 Kč, 2027: 123 991 Kč; při podnikání jen část roku se poměrně snižuje). Nad ní platíš z celého vyměřovacího základu.</li>
+          <li><strong>Zdravotní:</strong> 13,5 % z poloviny zisku, bez minima. Od roku 2026 státní pojištěnci s vedlejší činností neplatí měsíční zálohy, doplácí po přehledu.</li>
+          <li>Přehledy podáváš i tak.</li>
+        </ul>
+      </div></details>
+    </section>
+
+    <!-- PRIZNANI -->
+    <section class="block" id="priznani">
+      <div class="sec-head"><h2>Daňové přiznání, slevy a jak dostat daně zpátky</h2><span class="tag">§ 15, § 35ba, § 35c, § 38g ZDP</span></div>
+      <h3>Termíny pro přiznání za rok 2026</h3>
+      <div class="table-wrap item"><table>
+        <thead><tr><th>Způsob podání</th><th>Termín (podání i zaplacení)</th></tr></thead>
+        <tbody>
+          <tr><td>Papírově</td><td><strong>čtvrtek 1. 4. 2027</strong></td></tr>
+          <tr><td>Elektronicky (Moje daně, datová schránka)</td><td><strong>pondělí 3. 5. 2027</strong> (1. 5. je sobota)</td></tr>
+          <tr><td>Přes daňového poradce (plná moc uplatněná do 1. 4.)</td><td><strong>čtvrtek 1. 7. 2027</strong></td></tr>
+        </tbody>
+      </table></div>
+      <p>Přeplatek vrátí finanční úřad do 30 dnů od konce lhůty, nebo od podání, pokud podáš později. Žádost o vrácení je součástí formuláře, stačí vyplnit číslo účtu.</p>
+
+      <h3>Slevy na dani (odečítají se od daně)</h3>
+      <div class="table-wrap item"><table>
+        <thead><tr><th>Sleva</th><th class="num">Ročně</th><th>Podmínky</th></tr></thead>
+        <tbody>
+          <tr><td>Na poplatníka</td><td class="num">30 840 Kč</td><td>každý; plná výše i za část roku</td></tr>
+          <tr><td>Na manžela/manželku</td><td class="num">24 840 Kč</td><td>jen pokud ve společné domácnosti pečuje o dítě do 3 let a jeho/její příjem nepřesáhl 68 000 Kč</td></tr>
+          <tr><td>Na studenta</td><td class="num">0 Kč (2024–2026)<br>4 020 Kč (od 2027)</td><td>do 26 let (doktorandi prezenčně do 28); vrací se od 1. 1. 2027</td></tr>
+          <tr><td>Invalidita I./II. stupeň, III. stupeň</td><td class="num">2 520 / 5 040 Kč</td><td>podle stupně invalidity</td></tr>
+          <tr><td>Držitel průkazu ZTP/P</td><td class="num">16 140 Kč</td><td></td></tr>
+          <tr><td>Daňové zvýhodnění na děti</td><td class="num">15 204 / 22 320 / 27 840 Kč</td><td>1. / 2. / 3. a další dítě; když daň nestačí, vzniká <strong>daňový bonus</strong> (příjem aspoň 6× minimální mzda: 2026 134 400 Kč, 2027 149 400 Kč)</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Odpočty od základu daně (snižují základ)</h3>
+      <div class="table-wrap item"><table>
+        <thead><tr><th>Odpočet</th><th>Limit</th></tr></thead>
+        <tbody>
+          <tr><td>Dary (neziskovkám, školám, na zdravotnictví…)</td><td>min. 2 % základu nebo 1 000 Kč, max. 15 % základu (limity ověř pro daný rok)</td></tr>
+          <tr><td>Úroky z hypotéky na vlastní bydlení</td><td>150 000 Kč/rok (smlouvy od 2021); 300 000 Kč u starších smluv</td></tr>
+          <tr><td>Penzijní spoření, životní pojištění, DIP a další produkty na stáří</td><td>společně max. 48 000 Kč/rok; u penzijka jen část nad 1 700 Kč měsíčně</td></tr>
+          <tr><td>Dárcovství krve a orgánů</td><td>pevná částka za odběr (ověř)</td></tr>
+        </tbody>
+      </table></div>
+      <details class="qa item"><summary>Kdo musí podat přiznání?</summary><div class="a">
+        <ul>
+          <li>každý, kdo měl zdanitelné příjmy nad 50 000 Kč za rok (od příjmů za rok 2027 nad 100 000 Kč), kromě zaměstnanců, kteří splní podmínky pro roční zúčtování,</li>
+          <li>zaměstnanec, který měl kromě mzdy jiné příjmy (podnikání, nájem) nad 20 000 Kč (od 2027 nad 40 000 Kč),</li>
+          <li>zaměstnanec, který pracoval u více zaměstnavatelů <em>současně</em> (prohlášení podepsal jen u jednoho),</li>
+          <li>OSVČ v paušálním režimu, která porušila podmínky nebo překročila limity,</li>
+          <li>kdo má daňovou ztrátu, kterou chce uplatnit.</li>
+        </ul>
+      </div></details>
+      <details class="qa item"><summary>Jak podat přiznání krok za krokem (Moje daně)</summary><div class="a">
+        <ol class="steps">
+          <li>Přihlas se na <a href="https://www.mojedane.cz" target="_blank" rel="noopener">mojedane.cz</a> (bankovní identita, eObčanka, datovka). Elektronické podání ti dá o měsíc delší lhůtu.</li>
+          <li>Zvol <em>Přiznání k dani z příjmů fyzických osob (DAP)</em>. Online finanční úřad ti předvyplní některé údaje.</li>
+          <li>Zaměstnanec: přidej <em>Potvrzení o zdanitelných příjmech</em> od každého zaměstnavatele. Na požádání ti ho musí vydat, žádej ideálně v lednu.</li>
+          <li>OSVČ: vyplň Přílohu č. 1 (příjmy a výdaje, případně paušál). Nájem a ostatní příjmy: Příloha č. 2.</li>
+          <li>Uplatni slevy, děti a odpočty; přilož doklady (potvrzení o úrocích, darech, penzijku).</li>
+          <li>Vyplň číslo účtu pro vrácení přeplatku a odešli. Doplatek zaplať do konce lhůty.</li>
+          <li>OSVČ: do měsíce podej přehledy ČSSZ (ePortál) a zdravotní pojišťovně.</li>
+        </ol>
+      </div></details>
+      <details class="qa item"><summary>Roční zúčtování u zaměstnavatele, nebo vlastní přiznání?</summary><div class="a">
+        <p>Když jsi měl jen příjmy ze zaměstnání, celý rok u jednoho zaměstnavatele (nebo u více postupně) s podepsaným prohlášením, stačí požádat zaměstnavatele o roční zúčtování do <strong>15. 2.</strong> Jinak podáváš přiznání. Přiznání se vyplatí i dobrovolně, když ti zaměstnavatel neuplatnil slevu nebo chceš uplatnit odpočty.</p>
+      </div></details>
+    </section>
+
+    <!-- STUDENT -->
+    <section class="block" id="student">
+      <div class="sec-head"><h2>Student, brigády a vracení daní</h2><span class="tag">nejčastější otázky</span></div>
+      <div class="tip item"><strong>Základ:</strong> každý má slevu na poplatníka 30 840 Kč ročně. Při 15% dani pokryje daň ze základu přibližně 205 600 Kč. Pokud ti během roku zaměstnavatel strhával daň (nepodepsal jsi prohlášení, měl jsi víc brigád), tuto daň ti finanční úřad po podání přiznání vrátí.</div>
+      <details class="qa item"><summary>Jak dostanu jako student daně zpátky?</summary><div class="a">
+        <ol>
+          <li>Od všech zaměstnavatelů (i z DPP) si vyžádej <em>Potvrzení o zdanitelných příjmech</em>.</li>
+          <li>Podej přiznání (DAP) elektronicky přes Moje daně, za rok 2026 do 3. 5. 2027.</li>
+          <li>Uplatni slevu na poplatníka. Za rok 2026 se sleva na studenta neuplatňuje, ta se vrací až od roku 2027.</li>
+          <li>Vyplň číslo účtu. Přeplatek přijde do 30 dnů od konce lhůty.</li>
+        </ol>
+        <p><strong>Příklad:</strong> během roku 2026 sis na brigádách vydělal 150 000 Kč hrubého a strhli ti 15 000 Kč daně. Tvoje roční daň je 22 500 Kč, sleva 30 840 Kč ji vynuluje, takže ti vrátí celých 15 000 Kč.</p>
+        <p>Jen s jedním zaměstnavatelem a podepsaným prohlášením stačí požádat o roční zúčtování do 15. 2.</p>
+      </div></details>
+      <details class="qa item"><summary>DPP: kolik můžu vydělat bez odvodů?</summary><div class="a">
+        <ul>
+          <li>2026: do 11 999 Kč měsíčně u jednoho zaměstnavatele (u tzv. oznámené dohody) bez sociálního a zdravotního pojištění. Od 12 000 Kč se odvádí z celé částky.</li>
+          <li>2027: hranice 12 500 Kč.</li>
+          <li>Maximálně 300 hodin ročně u jednoho zaměstnavatele.</li>
+          <li><strong>Daň 2026:</strong> s podepsaným prohlášením se strhává záloha a uplatní se sleva (často vyjde 0). Bez prohlášení se do limitu strhává 15% srážková daň. I tu si jako rezident můžeš zahrnout do přiznání a nechat vrátit.</li>
+          <li><strong>Od 2027:</strong> srážková daň se ruší, nahradí ji zálohová daň.</li>
+        </ul>
+      </div></details>
+      <details class="qa item"><summary>Podnikám jako student (živnost). Co platím?</summary><div class="a">
+        <ul>
+          <li>Student do 26 let je <strong>státní pojištěnec</strong> a podnikání je pro něj <strong>vedlejší činnost</strong>.</li>
+          <li>Sociální pojištění: nic, pokud zisk za rok nepřesáhne 117 521 Kč (2026) / 123 991 Kč (2027).</li>
+          <li>Zdravotní pojištění: 13,5 % z poloviny zisku, doplácíš po podání přehledu; minimum se neplatí.</li>
+          <li>Daň: se slevou na poplatníka a výdajovým paušálem často vyjde nula. Příklad (2026): grafik s příjmy 280 000 Kč a 60% paušálem má zisk 112 000 Kč. Daň 16 800 Kč po slevě klesne na 0 Kč, sociální pojištění neplatí (zisk je pod 117 521 Kč) a zdravotní dělá 7 560 Kč za rok. Při příjmech 300 000 Kč už by zisk 120 000 Kč přesáhl rozhodnou částku a sociální by vyšlo zhruba na 19 300 Kč.</li>
+          <li><strong>Paušální daň se studentovi skoro nikdy nevyplatí</strong>: platil by plné minimum jako hlavní činnost.</li>
+        </ul>
+      </div></details>
+      <details class="qa item"><summary>Kdy přestávám být „student“ a co pak?</summary><div class="a">
+        <p>Za studenta se považuješ při soustavné přípravě na povolání do 26 let (zdravotní pojištění za tebe platí stát). Po dovršení 26 let nebo po skončení studia (o prázdninách po maturitě nebo státnicích jen do 31. 8., resp. po určitou dobu; ověř) musíš mít jiný titul: zaměstnání, podnikání, úřad práce. Jinak platíš zdravotní pojištění sám jako osoba bez zdanitelných příjmů (2026: 3 024 Kč měsíčně). Nahlas změnu pojišťovně do 8 dnů. Pozor, dluhy na zdravotním pojištění rostou penále.</p>
+      </div></details>
+      <details class="qa item"><summary>Mám víc brigád najednou. Kde podepsat prohlášení?</summary><div class="a"><p>Prohlášení k dani podepíšeš v jednom měsíci jen u jednoho zaměstnavatele (ideálně u toho s nejvyšším příjmem). U ostatních se daň strhává bez slevy. Po skončení roku podáš přiznání a přeplatek dostaneš zpět.</p></div></details>
+    </section>
+
+    <!-- EET -->
+    <section class="block" id="eet">
+      <div class="sec-head"><h2>EET 2.0 (od 1. 1. 2027)</h2><span class="tag">z. č. 180/2026 Sb.</span></div>
+      <div class="table-wrap item"><table>
+        <thead><tr><th>Platba</th><th>Eviduje se?</th></tr></thead>
+        <tbody>
+          <tr><td>Hotovost (v provozovně i mimo ni)</td><td>✅ ano, vždy</td></tr>
+          <tr><td>Karta, mobil, hodinky na terminálu na místě</td><td>✅ ano (kontaktní platba)</td></tr>
+          <tr><td>QR platba u pultu nebo u zákazníka</td><td>✅ ano</td></tr>
+          <tr><td>Stravenky, poukázky, dárkové karty</td><td>✅ ano</td></tr>
+          <tr><td>Bankovní převod na fakturu</td><td>❌ ne</td></tr>
+          <tr><td>Online platba přes platební bránu e-shopu</td><td>❌ ne</td></tr>
+          <tr><td>Dobírka přes dopravce nebo poštu</td><td>❌ ne</td></tr>
+          <tr><td>Osobní odběr e-shopové objednávky s platbou na místě</td><td>✅ ano</td></tr>
+        </tbody>
+      </table></div>
+      <ol class="steps item">
+        <li>Zjisti, jestli vůbec přijímáš kontaktní platby. Kdo bere peníze jen převodem, nemá co evidovat.</li>
+        <li>V DIS+ na <a href="https://www.mojedane.cz" target="_blank" rel="noopener">Moje daně</a> aktivuj evidenci tržeb, nahlas evidenční jednotky (provozovny, auta, stánky) a vygeneruj pokladní certifikát.</li>
+        <li>Vyber zařízení: bezplatná aplikace <strong>MOJE eet</strong> od Finanční správy (pro malé podnikatele, mobil, tablet, PC), nebo pokladní software dodavatele.</li>
+        <li>Účtenku nemusíš tisknout. Zákazníkovi ji dáš, pokud o ni požádá (i elektronicky).</li>
+        <li>Paušalista v 1. pásmu s příjmy do 1 mil. Kč: zvaž <strong>EET OFF</strong> (přirážka 1 400 Kč/měsíc, přihláška do 11. 1. 2027, během roku nejde změnit).</li>
+      </ol>
+      <details class="qa item"><summary>Vyplatí se mi EET OFF?</summary><div class="a"><p>EET OFF stojí 16 800 Kč ročně. Vyplatí se, pokud přijímáš hodně kontaktních plateb a evidence by tě stála čas nebo peníze za pokladnu a software (kadeřnice, řemeslník, stánek). Pokud bereš jen převody, nemáš co evidovat a přirážku nepotřebuješ. EET OFF nejde u s.r.o., plátců DPH, ani ve 2. a 3. pásmu paušální daně.</p></div></details>
+      <details class="qa item"><summary>Jaké hrozí sankce?</summary><div class="a"><p>Pokuta až 500 000 Kč podle závažnosti. Uzavírání provozoven jako u staré EET zákon nezavádí. Finanční správa avizuje, že v lednu 2027 bude postupovat hlavně metodicky, ale povinnost platí od 1. 1. 2027. Informace: <a href="https://eet.gov.cz" target="_blank" rel="noopener">eet.gov.cz</a>.</p></div></details>
+    </section>
+
+    <!-- ZAMESTNANCI -->
+    <section class="block" id="zamestnanci">
+      <div class="sec-head"><h2>Zaměstnanci a mzdy</h2><span class="tag">zákoník práce 262/2006 Sb.</span></div>
+      <div class="table-wrap item"><table>
+        <thead><tr><th></th><th>HPP (pracovní smlouva)</th><th>DPP</th><th>DPČ</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Rozsah</strong></td><td>do 40 h týdně</td><td>max. 300 h ročně u jednoho zaměstnavatele</td><td>max. 20 h týdně v průměru</td></tr>
+          <tr><td><strong>Odvody</strong></td><td>vždy</td><td>až od 12 000 Kč/měs. (2026), 12 500 Kč (2027)</td><td>od 4 500 Kč/měs. (2026), 5 000 Kč (2027)</td></tr>
+          <tr><td><strong>Dovolená</strong></td><td>ano, min. 4 týdny</td><td>ano, za podmínek zákoníku práce</td><td>ano</td></tr>
+          <tr><td><strong>Výpověď</strong></td><td>jen ze zákonných důvodů</td><td>dle dohody, jinak 15denní výpovědní doba</td><td>dle dohody, jinak 15denní výpovědní doba</td></tr>
+        </tbody>
+      </table></div>
+      <div class="table-wrap item"><table>
+        <thead><tr><th>Parametr</th><th class="num">2026</th><th class="num">2027</th></tr></thead>
+        <tbody>
+          <tr><td>Minimální mzda</td><td class="num">22 400 Kč (134,40 Kč/h)</td><td class="num">24 900 Kč (148,30 Kč/h)</td></tr>
+          <tr><td>Odvody zaměstnavatele</td><td class="num" colspan="2">24,8 % sociální + 9 % zdravotní = 33,8 % nad hrubou mzdu</td></tr>
+          <tr><td>Odvody zaměstnance</td><td class="num" colspan="2">7,1 % sociální (vč. 0,6 % nemocenské) + 4,5 % zdravotní = 11,6 %</td></tr>
+          <tr><td>Celkový náklad na minimální mzdu</td><td class="num">29 972 Kč</td><td class="num">33 317 Kč</td></tr>
+          <tr><td>Stravenkový paušál osvobozený</td><td class="num">129,50 Kč/směna</td><td class="num">podle vyhlášky 2027</td></tr>
+          <tr><td>Náhrada za 1 km vlastním autem</td><td class="num">5,90 Kč + PHM</td><td class="num">podle vyhlášky 2027</td></tr>
+          <tr><td>Stravné tuzemské (min., podnikatelé) 5–12 h / 12–18 h / nad 18 h</td><td class="num">155 / 236 / 370 Kč</td><td class="num">podle vyhlášky 2027</td></tr>
+          <tr><td>Náhrada za práci z domova (paušál)</td><td class="num">4,70 Kč/h</td><td class="num">podle vyhlášky 2027</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Když přijímáš prvního zaměstnance</h3>
+      <ol class="steps item">
+        <li><strong>Registrace zaměstnavatele</strong> u ČSSZ (do 8 dnů od nástupu prvního zaměstnance) a na finančním úřadě k dani ze závislé činnosti.</li>
+        <li><strong>Smlouva písemně</strong>: druh práce, místo, den nástupu; informace o podmínkách zaměstnání do 7 dnů.</li>
+        <li><strong>Vstupní lékařská prohlídka</strong> (podle kategorie práce) a <strong>školení BOZP</strong> před nástupem.</li>
+        <li><strong>Přihláška do pojištění</strong>: od roku 2026 přes <em>jednotné měsíční hlášení zaměstnavatele (JMHZ)</em>; zdravotní pojišťovně do 8 dnů.</li>
+        <li><strong>Zákonné pojištění odpovědnosti zaměstnavatele</strong> za pracovní úrazy vzniká automaticky; platíš ho čtvrtletně.</li>
+        <li><strong>Prohlášení k dani</strong>, evidence pracovní doby, mzdový list (archivuješ 30 let).</li>
+      </ol>
+      <details class="qa item"><summary>Můžu místo zaměstnance spolupracovat s živnostníkem?</summary><div class="a"><p>Ano, pokud jde opravdu o podnikání: vlastní nástroje, vlastní čas, více klientů, odpovědnost za výsledek. Pokud ale „živnostník“ pracuje jako zaměstnanec (pod tvým vedením, v tvé pracovní době, pravidelně, osobně a jen pro tebe), jde o <strong>švarcsystém (nelegální práce)</strong>. Pokuta pro firmu až 10 mil. Kč, plus doměření pojistného a daní. <span class="law">§ 3 ZP, § 140 z. o zaměstnanosti</span></p></div></details>
+      <details class="qa item"><summary>Jaké benefity jsou daňově výhodné?</summary><div class="a"><ul>
+        <li>Stravenky / stravenkový paušál do limitu (2026: 129,50 Kč za směnu, práce aspoň 3 hodiny).</li>
+        <li>Volnočasové benefity (sport, kultura, zdraví) jsou od roku 2024 osvobozené jen do poloviny průměrné mzdy ročně (2026: 24 483 Kč); pravidla benefitů se od 2027 upravují, ověř.</li>
+        <li>Příspěvek na penzijní spoření a životní pojištění: osvobozen do 50 000 Kč ročně.</li>
+        <li>Vzdělávání související s prací.</li>
+      </ul></div></details>
+      <p><a href="#calc-mzda">→ Kalkulačka: kolik zaměstnanec dostane a kolik tě stojí</a></p>
+    </section>
+
+    <!-- FAKTURY -->
+    <section class="block" id="faktury">
+      <div class="sec-head"><h2>Faktury a doklady</h2><span class="tag">§ 435 OZ, § 29 z. o DPH, § 11 z. o účetnictví</span></div>
+      <div class="cols item">
+        <div class="col yes"><h4>Faktura neplátce DPH</h4><ul>
+          <li>jméno a příjmení / název, sídlo, IČO</li>
+          <li>údaj o zápisu: „Fyzická osoba zapsaná v živnostenském rejstříku“, u s.r.o. spisová značka obchodního rejstříku</li>
+          <li>údaje odběratele</li>
+          <li>číslo faktury, datum vystavení, splatnost</li>
+          <li>co dodáváš a za kolik</li>
+          <li>doporučeno: „Nejsem plátce DPH“ a číslo účtu</li>
+        </ul></div>
+        <div class="col yes"><h4>Navíc u plátce DPH (daňový doklad)</h4><ul>
+          <li>DIČ dodavatele i odběratele</li>
+          <li>evidenční číslo dokladu</li>
+          <li>datum uskutečnění zdanitelného plnění (DUZP)</li>
+          <li>jednotková cena, základ daně, sazba, výše DPH</li>
+          <li>vystavit do 15 dnů od DUZP</li>
+          <li>zjednodušený doklad stačí do 10 000 Kč</li>
+        </ul></div>
+      </div>
+      <div class="table-wrap item"><table>
+        <thead><tr><th>Co</th><th>Jak dlouho uchovávat</th></tr></thead>
+        <tbody>
+          <tr><td>Doklady pro DPH</td><td>10 let od konce roku <span class="law">§ 35 z. o DPH</span></td></tr>
+          <tr><td>Účetní záznamy, účetní závěrka</td><td>5 let (závěrka a výroční zpráva 10 let) <span class="law">§ 31 z. o účetnictví</span></td></tr>
+          <tr><td>Daňová evidence, doklady k dani z příjmů</td><td>po dobu lhůty pro stanovení daně (základ 3 roky, často se prodlužuje), u ztráty a odpisů déle</td></tr>
+          <tr><td>Mzdové listy, podklady pro důchod</td><td>30 let po roce, kterého se týkají</td></tr>
+          <tr><td><strong>Praktické doporučení</strong></td><td><strong>10 let, elektronicky (PDF stačí)</strong></td></tr>
+        </tbody>
+      </table></div>
+      <details class="qa item"><summary>Můžu posílat faktury jen jako PDF e-mailem?</summary><div class="a"><p>Ano. Elektronická faktura je rovnocenná papírové, pokud se odběratel s jejím použitím ztotožní (běžně tím, že ji přijme a zaplatí). Musí být zajištěna věrohodnost původu, neporušenost a čitelnost, což PDF z fakturačního systému splňuje.</p></div></details>
+      <details class="qa item"><summary>Zákazník nezaplatil. Můžu fakturu stornovat?</summary><div class="a"><p>Neplacení není důvod ke stornu: plnění proběhlo a příjem se daní (při daňové evidenci až po zaplacení, v účetnictví hned). Řeš vymáhání (<a href="#smlouvy">Pohledávky</a>). Plátce DPH může za podmínek § 46 zákona o DPH snížit daň u nedobytné pohledávky.</p></div></details>
+    </section>
+
+    <!-- SRO -->
+    <section class="block" id="sro">
+      <div class="sec-head"><h2>s.r.o.: založení a povinnosti</h2><span class="tag">ZOK 90/2012 Sb.</span></div>
+      <ol class="steps item">
+        <li><strong>Zakladatelská listina / společenská smlouva</strong> ve formě notářského zápisu. Jednoduchou s.r.o. založí notář včetně zápisu do obchodního rejstříku.</li>
+        <li><strong>Základní kapitál</strong> min. 1 Kč na společníka. Z praktických důvodů (banky, důvěryhodnost) se volí víc.</li>
+        <li><strong>Živnostenské oprávnění</strong> pro předmět podnikání a <strong>zápis do obchodního rejstříku</strong>.</li>
+        <li><strong>Registrace k dani</strong> z příjmů PO do 15 dnů od vzniku; datová schránka se zřizuje automaticky.</li>
+        <li><strong>Evidence skutečných majitelů</strong>: zapsat, kdo firmu skutečně vlastní a ovládá. Bez zápisu hrozí pokuty a omezení práv.</li>
+      </ol>
+      <div class="cols item">
+        <div class="col yes"><h4>Každoročně</h4><ul>
+          <li>podvojné účetnictví a účetní závěrka</li>
+          <li>přiznání k DPPO (termíny jako u fyzických osob)</li>
+          <li>schválení závěrky valnou hromadou</li>
+          <li>zveřejnění závěrky ve Sbírce listin (nejpozději do 12 měsíců od konce účetního období)</li>
+          <li>zálohy na daň podle poslední daňové povinnosti</li>
+        </ul></div>
+        <div class="col no"><h4>Na co si dát pozor</h4><ul>
+          <li>mzda jednatele musí být ve smlouvě o výkonu funkce schválené valnou hromadou, jinak je funkce bezplatná <span class="law">§ 59 ZOK</span></li>
+          <li>před výplatou zisku proveď test insolvence <span class="law">§ 40 ZOK</span></li>
+          <li>půjčky společníkům a jednateli za neobvyklých podmínek: daňové riziko</li>
+          <li>jednatel při úpadku může ručit za dluhy firmy <span class="law">§ 68 ZOK</span></li>
+          <li>firma není prasátko: platby za soukromé věci jsou neoprávněný odběr</li>
+        </ul></div>
+      </div>
+      <details class="qa item"><summary>Jak si vzít peníze z s.r.o.?</summary><div class="a"><ul>
+        <li><strong>Podíl na zisku:</strong> po schválení závěrky valnou hromadou; firma srazí 15 % daň a víc neřešíš (bez pojistného).</li>
+        <li><strong>Mzda / odměna jednatele:</strong> daňový náklad firmy, ale platí se daň a pojistné. Hodí se pro důchod a nárok na nemocenskou.</li>
+        <li><strong>Náhrady</strong> (cestovné, služební auto) podle pravidel. Soukromé použití firemního auta se daní jako příjem 1 % vstupní ceny měsíčně (u nízkoemisních vozidel méně).</li>
+        <li>Často se kombinuje nižší mzda (kvůli pojištění) a dividenda.</li>
+      </ul></div></details>
+      <details class="qa item"><summary>Ztráta firmy</summary><div class="a"><p>Daňovou ztrátu lze uplatnit v 5 následujících letech nebo zpětně ve 2 předchozích (zpětně max. 30 mil. Kč). <span class="law">§ 34 ZDP</span></p></div></details>
+    </section>
+
+    <!-- SMLOUVY -->
+    <section class="block" id="smlouvy">
+      <div class="sec-head"><h2>Smlouvy a pohledávky</h2><span class="tag">občanský zákoník 89/2012 Sb.</span></div>
+      <div class="table-wrap item"><table>
+        <thead><tr><th>Pravidlo</th><th>Co platí</th></tr></thead>
+        <tbody>
+          <tr><td>Splatnost mezi podnikateli</td><td>max. 60 dní od doručení faktury, delší jen pokud to není hrubě nespravedlivé vůči věřiteli; u veřejného zadavatele 30 dní <span class="law">§ 1963–1964 OZ</span></td></tr>
+          <tr><td>Úrok z prodlení</td><td>repo sazba ČNB platná k 1. dni pololetí + 8 procentních bodů ročně <span class="law">NV č. 351/2013 Sb.</span></td></tr>
+          <tr><td>Paušál za vymáhání (B2B)</td><td>1 200 Kč za každou pohledávku jako náklady spojené s uplatněním</td></tr>
+          <tr><td>Promlčení</td><td>obecně 3 roky od doby, kdy šlo právo uplatnit poprvé (obvykle od splatnosti) <span class="law">§ 629 OZ</span></td></tr>
+          <tr><td>Forma smlouvy</td><td>většina může být i ústní nebo e-mailem; písemně povinně např. u převodu nemovitostí. Vždy ale písemně kvůli důkazu.</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Klient nezaplatil: postup</h3>
+      <ol class="steps item">
+        <li><strong>Připomínka</strong> den po splatnosti (telefon, e-mail).</li>
+        <li><strong>Upomínka</strong> s novým termínem a vyčíslením úroku z prodlení.</li>
+        <li><strong>Předžalobní výzva</strong>: doporučeně nebo datovkou, nejméně 7 dní před podáním žaloby; jinak ti soud nemusí přiznat náhradu nákladů <span class="law">§ 142a OSŘ</span>.</li>
+        <li><strong>Žaloba / (elektronický) platební rozkaz</strong> u okresního soudu. Soudní poplatek je zpravidla procento z dlužné částky (u elektronického podání nižší); ověř aktuální sazebník.</li>
+        <li><strong>Exekuce</strong> na základě pravomocného rozhodnutí.</li>
+        <li><strong>Insolvence dlužníka:</strong> sleduj <a href="https://isir.justice.cz" target="_blank" rel="noopener">insolvenční rejstřík</a>; pohledávku přihlas včas (lhůta běží od rozhodnutí o úpadku, typicky 2 měsíce).</li>
+      </ol>
+      <details class="qa item"><summary>Co by měla obsahovat smlouva o dílo nebo o službách?</summary><div class="a"><ul>
+        <li>přesný rozsah (co je a co není součástí), akceptace výsledku</li>
+        <li>cena, zálohy, splatnost, úrok nebo smluvní pokuta při prodlení</li>
+        <li>termíny a co se stane při zpoždění (z obou stran)</li>
+        <li>vícepráce a změny zadání (jen písemně, s cenou)</li>
+        <li>autorská práva / licence k výsledku (u kreativy a softwaru)</li>
+        <li>mlčenlivost, omezení odpovědnosti za škodu (rozumný strop)</li>
+        <li>ukončení smlouvy a výpovědní lhůta, rozhodné právo a soud</li>
+      </ul></div></details>
+      <details class="qa item"><summary>Jsem grafik nebo programátor. Komu patří, co vytvořím?</summary><div class="a"><p>Autorem díla zůstáváš ty. Klient získává jen <strong>licenci</strong>, tedy oprávnění dílo užívat. Ve smlouvě proto sjednej rozsah licence: výhradní nebo nevýhradní, území, doba, způsoby užití, možnost úprav a postoupení. Bez toho mohou vzniknout spory. U zaměstnance jde o zaměstnanecké dílo a práva vykonává zaměstnavatel. <span class="law">§ 2358 OZ, autorský zákon 121/2000 Sb.</span></p></div></details>
+      <details class="qa item"><summary>Chci chránit název nebo logo</summary><div class="a"><p>Ochrannou známku přihlásíš u Úřadu průmyslového vlastnictví (ČR) nebo EUIPO (celá EU). Před registrací si ověř, že stejná nebo podobná známka neexistuje. Poplatky jsou v řádu tisíců korun, ochrana platí 10 let s možností obnovy.</p></div></details>
+      <details class="qa item"><summary>Ručím jako OSVČ i majetkem manžela/manželky?</summary><div class="a"><p>OSVČ ručí celým svým majetkem. Dluhy z podnikání mohou za určitých podmínek dopadnout i na společné jmění manželů (zejména pokud druhý manžel s podnikáním souhlasil nebo z něj majetek pochází). Řešením je smlouva o zúžení SJM před vznikem dluhů, nebo s.r.o.</p></div></details>
+    </section>
+
+    <!-- SPOTREBITELE -->
+    <section class="block" id="spotrebitele">
+      <div class="sec-head"><h2>E-shop, spotřebitelé a GDPR</h2><span class="tag">OZ, z. o ochraně spotřebitele, GDPR</span></div>
+      <div class="table-wrap item"><table>
+        <thead><tr><th>Pravidlo</th><th>Co platí</th></tr></thead>
+        <tbody>
+          <tr><td>Odstoupení od smlouvy na dálku</td><td>14 dní bez udání důvodu; peníze vrátit do 14 dnů. Když spotřebitele o právu nepoučíš, lhůta se prodlužuje o 12 měsíců. <span class="law">§ 1829 OZ</span></td></tr>
+          <tr><td>Práva z vadného plnění</td><td>2 roky u nového zboží (u použitého lze zkrátit na 1 rok); vada, která se projeví do 1 roku, se považuje za existující při převzetí.</td></tr>
+          <tr><td>Vyřízení reklamace</td><td>do 30 dnů; o uplatnění reklamace vydat potvrzení</td></tr>
+          <tr><td>Slevy</td><td>u slevy uváděj nejnižší cenu za posledních 30 dní před slevou</td></tr>
+          <tr><td>Recenze</td><td>uveď, zda a jak ověřuješ, že pocházejí od skutečných zákazníků; falešné recenze jsou zakázané</td></tr>
+          <tr><td>Mimosoudní řešení sporů</td><td>informuj o možnosti obrátit se na ČOI</td></tr>
+          <tr><td>Cookies</td><td>analytické a marketingové cookies jen s předchozím souhlasem (opt-in), odmítnutí stejně snadné jako přijetí</td></tr>
+          <tr><td>Newslettery</td><td>jen se souhlasem, nebo stávajícím zákazníkům k podobnému zboží; vždy snadné odhlášení <span class="law">z. č. 480/2004 Sb.</span></td></tr>
+          <tr><td>Přístupnost webu</td><td>od 28. 6. 2025 platí požadavky na přístupnost e-shopů; mikropodniky (pod 10 zaměstnanců a obrat do 2 mil. EUR) mají u služeb výjimku <span class="law">z. č. 424/2023 Sb.</span></td></tr>
+          <tr><td>DPH při prodeji do EU</td><td>nad 10 000 EUR ročně spotřebitelům v jiných státech EU: DPH státu zákazníka přes OSS</td></tr>
+          <tr><td>EET</td><td>platební brána, převod a dobírka se neevidují; platba na výdejně ano</td></tr>
+        </tbody>
+      </table></div>
+      <h3>GDPR v kostce pro malou firmu</h3>
+      <ol class="steps item">
+        <li><strong>Zmapuj, jaké osobní údaje máš</strong> (zákazníci, zaměstnanci, newsletter) a proč.</li>
+        <li><strong>Právní důvod:</strong> plnění smlouvy, zákonná povinnost (účetnictví), oprávněný zájem, nebo souhlas (marketing).</li>
+        <li><strong>Informuj</strong>: zásady zpracování osobních údajů na webu a u formulářů.</li>
+        <li><strong>Zpracovatelské smlouvy</strong> s účetní, hostingem, e-mailingovým nástrojem, CRM.</li>
+        <li><strong>Zabezpečení</strong>: hesla, dvoufázové ověření, zálohy, přístupy jen pro ty, kdo je potřebují.</li>
+        <li><strong>Únik dat</strong> hlas Úřadu pro ochranu osobních údajů do 72 hodin, pokud je riziko pro lidi.</li>
+      </ol>
+      <p class="muted">Pověřence (DPO) potřebuje malá firma jen výjimečně (rozsáhlé sledování osob nebo citlivé údaje ve velkém). Pokuty mohou dosáhnout až 20 mil. EUR nebo 4 % obratu, u malých firem bývají řádově nižší.</p>
+    </section>
+
+    <!-- KONTROLY -->
+    <section class="block" id="kontroly">
+      <div class="sec-head"><h2>Kontrola z úřadu a sankce</h2><span class="tag">daňový řád 280/2009 Sb.</span></div>
+      <div class="table-wrap item"><table>
+        <thead><tr><th>Sankce</th><th>Výše</th><th>Kdy</th></tr></thead>
+        <tbody>
+          <tr><td>Pokuta za opožděné tvrzení <span class="law">§ 250</span></td><td>0,05 % daně za každý den (max. 5 %); do 1 000 Kč se nepředepíše; prvních 5 pracovních dnů tolerance</td><td>pozdě podané přiznání</td></tr>
+          <tr><td>Penále <span class="law">§ 251</span></td><td>20 % z doměřené daně (1 % ze snížení ztráty, 20 % ze snížení odpočtu)</td><td>doměření daně při kontrole</td></tr>
+          <tr><td>Úrok z prodlení <span class="law">§ 252</span></td><td>repo sazba ČNB + 8 p. b. ročně, max. za 5 let</td><td>pozdě zaplacená daň</td></tr>
+          <tr><td>Pokuty u KH</td><td>1 000 až 50 000 Kč (až 500 000 Kč)</td><td>kontrolní hlášení DPH</td></tr>
+        </tbody>
+      </table></div>
+      <ol class="steps item">
+        <li><strong>Zachovej klid a dodržuj lhůty.</strong> Výzvy přicházejí většinou do datové schránky. Lhůtu lze na žádost prodloužit.</li>
+        <li><strong>Postup k odstranění pochybností</strong> <span class="law">§ 89</span>: FÚ chce vysvětlit nebo doložit konkrétní věc. Odpověz věcně a přilož doklady.</li>
+        <li><strong>Daňová kontrola</strong> <span class="law">§ 85</span>: máš právo na zástupce (daňový poradce), nahlížet do spisu, vyjádřit se ke zjištěním před koncem kontroly.</li>
+        <li><strong>Odvolání</strong> proti platebnímu výměru: do 30 dnů od doručení.</li>
+        <li><strong>Nemáš na doplatek?</strong> Požádej o posečkání nebo splátkový kalendář <span class="law">§ 156</span> dřív, než vzniknou úroky. Příslušenství (úrok, část penále, pokutu) lze za podmínek prominout.</li>
+        <li><strong>Lhůta pro stanovení daně</strong> je 3 roky od konce lhůty pro přiznání, ale úkony úřadu ji prodlužují (celkově max. 10 let) <span class="law">§ 148</span>.</li>
+      </ol>
+      <details class="qa item"><summary>Jaké další úřady mohou přijít?</summary><div class="a"><ul>
+        <li><strong>ČSSZ a zdravotní pojišťovna</strong>: kontrola pojistného a přihlášek zaměstnanců.</li>
+        <li><strong>Inspektorát práce</strong>: smlouvy, pracovní doba, dohody, nelegální práce.</li>
+        <li><strong>ČOI</strong>: ochrana spotřebitele, obchodní podmínky, reklamace, ceny.</li>
+        <li><strong>Živnostenský úřad</strong>: oprávnění, označení provozovny.</li>
+        <li><strong>Hygiena, SZPI, HZS</strong>: podle oboru (gastro, potraviny, požární ochrana).</li>
+        <li><strong>ÚOOÚ</strong>: osobní údaje a cookies.</li>
+      </ul></div></details>
+    </section>
+
+    <!-- KALENDAR -->
+    <section class="block" id="kalendar">
+      <div class="sec-head"><h2>Kalendář termínů 2027</h2><span class="tag">termíny posunuté na pracovní dny</span></div>
+      <ul class="timeline item">
+        <li><span class="d">1. 1.<small>pátek</small></span><span>Start EET 2.0, nové zálohy, minimální mzda 24 900 Kč, návrat slevy na studenta.</span></li>
+        <li><span class="d">11. 1.<small>pondělí</small></span><span>Paušální daň: vstup, změna pásma, vystoupení, přirážka EET OFF; oznámení o jiné výši paušální daně za rok 2026.</span></li>
+        <li><span class="d">20. 1.<small>středa</small></span><span>První paušální záloha 2027 (pak vždy do 20. dne v měsíci).</span></li>
+        <li><span class="d">1. 2.<small>pondělí</small></span><span>Přiznání k dani z nemovitých věcí (pokud nastala změna) a přiznání k silniční dani za rok 2026. Sociální záloha za leden musí být uhrazena do konce ledna.</span></li>
+        <li><span class="d">8. 2.<small>pondělí</small></span><span>Zdravotní záloha za leden v nové výši (3 488 Kč při minimu).</span></li>
+        <li><span class="d">15. 2.<small>pondělí</small></span><span>Zaměstnanci: žádost o roční zúčtování za rok 2026 a prohlášení k dani na rok 2027.</span></li>
+        <li><span class="d">15. 3.<small>pondělí</small></span><span>Čtvrtletní záloha na daň z příjmů (poslední daňová povinnost nad 150 000 Kč).</span></li>
+        <li><span class="d">1. 4.<small>čtvrtek</small></span><span>Papírové přiznání k dani z příjmů za rok 2026 a zaplacení daně.</span></li>
+        <li><span class="d">3. 5.<small>pondělí</small></span><span>Elektronické přiznání za rok 2026. Přehledy ČSSZ a ZP při papírovém přiznání.</span></li>
+        <li><span class="d">31. 5.<small>pondělí</small></span><span>Splatnost daně z nemovitých věcí (do 5 000 Kč celá).</span></li>
+        <li><span class="d">3. 6.<small>čtvrtek</small></span><span>Přehledy ČSSZ a ZP při elektronickém přiznání.</span></li>
+        <li><span class="d">15. 6.<small>úterý</small></span><span>Pololetní / čtvrtletní záloha na daň z příjmů.</span></li>
+        <li><span class="d">1. 7.<small>čtvrtek</small></span><span>Přiznání přes daňového poradce.</span></li>
+        <li><span class="d">2. 8.<small>pondělí</small></span><span>Přehledy ČSSZ a ZP při podání přes poradce.</span></li>
+        <li><span class="d">15. 9.<small>středa</small></span><span>Čtvrtletní záloha na daň z příjmů.</span></li>
+        <li><span class="d">15. 12.<small>středa</small></span><span>Pololetní / čtvrtletní záloha na daň z příjmů.</span></li>
+        <li><span class="d">10. 1. 2028<small>pondělí</small></span><span>Paušální daň a EET OFF na rok 2028.</span></li>
+        <li><span class="d">každý 25.<small>měsíčně</small></span><span>Plátci DPH: přiznání, kontrolní hlášení, souhrnné hlášení a zaplacení DPH za předchozí měsíc nebo čtvrtletí.</span></li>
+      </ul>
+      <p class="muted" style="font-size:.88rem">Zálohy na daň z příjmů: poslední daňová povinnost 30 000–150 000 Kč → pololetně 40 % (15. 6. a 15. 12.); nad 150 000 Kč → čtvrtletně 25 %. Pod 30 000 Kč se zálohy neplatí.</p>
+    </section>
+
+    <!-- KALKULACKY -->
+    <section class="block" id="kalkulacky">
+      <div class="sec-head"><h2>Kalkulačky</h2><span class="tag">orientační výpočty</span></div>
+      <p class="intro">Výpočty běží jen ve tvém prohlížeči, nic se nikam neodesílá. Jsou zjednodušené a slouží k porovnání variant, ne jako podklad pro podání.</p>
+
+      <!-- CALC OSVC -->
+      <div class="calc item" id="calc-osvc" data-keywords="kalkulacka pausalni dan vydajovy pausal skutecne vydaje osvc odvody">
+        <h3>Paušální daň vs. výdajový paušál vs. skutečné výdaje</h3>
+        <div class="form-grid">
+          <div class="field"><label for="o-rok">Rok</label><select id="o-rok"><option value="2027">2027</option><option value="2026">2026</option></select></div>
+          <div class="field"><label for="o-prijmy">Roční příjmy z podnikání (Kč)</label><input id="o-prijmy" type="number" min="0" step="1000" value="800000"></div>
+          <div class="field"><label for="o-pausal">Typ činnosti / výdajový paušál</label><select id="o-pausal"><option value="0.8">80 % – řemeslná živnost, zemědělství</option><option value="0.6" selected>60 % – ostatní živnosti</option><option value="0.4">40 % – svobodná povolání, autoři</option></select></div>
+          <div class="field"><label for="o-typ">Jak podnikáš</label><select id="o-typ"><option value="hlavni">Hlavní činnost</option><option value="student">Vedlejší – student do 26 let</option><option value="vedlejsi">Vedlejší – rodičovská / důchodce</option><option value="zam">Vedlejší – při zaměstnání</option></select></div>
+          <div class="field"><label for="o-skutecne">Skutečné roční výdaje (Kč, nepovinné)</label><input id="o-skutecne" type="number" min="0" step="1000" placeholder="např. 150000"><div class="hint">Vyplň pro porovnání s daňovou evidencí a výpočet, kolik ti zůstane.</div></div>
+          <div class="field"><label for="o-deti">Počet dětí (daňové zvýhodnění)</label><select id="o-deti"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+          <div class="field"><label class="check"><input type="checkbox" id="o-dph"> Jsem plátce DPH</label></div>
+        </div>
+        <div class="result" id="o-result" aria-live="polite"></div>
+      </div>
+
+      <!-- CALC ODPISY -->
+      <div class="calc item" id="calc-odpisy" data-keywords="kalkulacka odpisy rovnomerne zrychlene auto majetek">
+        <h3>Odpisová kalkulačka</h3>
+        <div class="form-grid">
+          <div class="field"><label for="d-vc">Vstupní cena (Kč)</label><input id="d-vc" type="number" min="0" step="1000" value="350000"><div class="hint">U plátce DPH bez DPH.</div></div>
+          <div class="field"><label for="d-sk">Odpisová skupina</label><select id="d-sk"><option value="1">1 – 3 roky (počítače, nářadí)</option><option value="2" selected>2 – 5 let (auta, nábytek, stroje)</option><option value="3">3 – 10 let (těžší stroje)</option><option value="4">4 – 20 let (lehké stavby, potrubí)</option><option value="5">5 – 30 let (budovy)</option><option value="6">6 – 50 let (administrativní budovy)</option></select></div>
+          <div class="field"><label for="d-metoda">Způsob</label><select id="d-metoda"><option value="r">Rovnoměrný</option><option value="z">Zrychlený</option></select></div>
+          <div class="field"><label for="d-rok">Rok zařazení</label><input id="d-rok" type="number" min="2000" max="2100" value="2026"></div>
+          <div class="field"><label class="check"><input type="checkbox" id="d-auto"> Osobní auto (strop 2 mil. Kč)</label></div>
+        </div>
+        <div class="result" id="d-result" aria-live="polite"></div>
+      </div>
+
+      <!-- CALC SRO -->
+      <div class="calc item" id="calc-sro" data-keywords="kalkulacka sro osvc dividenda podil na zisku srovnani">
+        <h3>OSVČ, nebo s.r.o.? (zisk vybraný jako dividenda)</h3>
+        <div class="form-grid">
+          <div class="field"><label for="s-rok">Rok</label><select id="s-rok"><option value="2027">2027</option><option value="2026">2026</option></select></div>
+          <div class="field"><label for="s-zisk">Roční zisk (příjmy − skutečné výdaje)</label><input id="s-zisk" type="number" min="0" step="10000" value="1500000"></div>
+          <div class="field"><label for="s-ucetni">Náklady navíc u s.r.o. (účetní, závěrka) za rok</label><input id="s-ucetni" type="number" min="0" step="1000" value="30000"></div>
+          <div class="field"><label class="check"><input type="checkbox" id="s-obzp" checked> Nemám jiný příjem (u s.r.o. platím zdravotní jako OBZP)</label></div>
+        </div>
+        <div class="result" id="s-result" aria-live="polite"></div>
+      </div>
+
+      <!-- CALC MZDA -->
+      <div class="calc item" id="calc-mzda" data-keywords="kalkulacka mzda cista hruba naklady zamestnavatele zamestnanec">
+        <h3>Cena zaměstnance: čistá mzda a náklady firmy (měsíčně, HPP)</h3>
+        <div class="form-grid">
+          <div class="field"><label for="m-rok">Rok</label><select id="m-rok"><option value="2027">2027</option><option value="2026">2026</option></select></div>
+          <div class="field"><label for="m-hruba">Hrubá měsíční mzda (Kč)</label><input id="m-hruba" type="number" min="0" step="500" value="45000"></div>
+          <div class="field"><label for="m-deti">Počet dětí</label><select id="m-deti"><option>0</option><option>1</option><option>2</option><option>3</option></select></div>
+          <div class="field"><label class="check"><input type="checkbox" id="m-prohl" checked> Podepsané prohlášení k dani</label><label class="check"><input type="checkbox" id="m-student"> Student do 26 let (sleva od 2027)</label></div>
+        </div>
+        <div class="result" id="m-result" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- SLOVNIK -->
+    <section class="block" id="slovnik">
+      <div class="sec-head"><h2>Slovníček</h2></div>
+      <dl class="gloss item">
+        <dt>OSVČ</dt><dd>osoba samostatně výdělečně činná: živnostník nebo svobodné povolání</dd>
+        <dt>IČO / DIČ</dt><dd>identifikační číslo osoby / daňové identifikační číslo (CZ + číslo)</dd>
+        <dt>Základ daně (ZD)</dt><dd>příjmy minus výdaje (zisk), z něj se počítá daň</dd>
+        <dt>Vyměřovací základ (VZ)</dt><dd>částka, ze které se počítá pojistné: u OSVČ 55 % zisku (sociální) a 50 % zisku (zdravotní)</dd>
+        <dt>Výdajový paušál</dt><dd>výdaje stanovené procentem z příjmů místo skutečných výdajů</dd>
+        <dt>Paušální daň</dt><dd>jedna měsíční platba za daň a obě pojištění (paušální režim)</dd>
+        <dt>Daňová evidence</dt><dd>jednoduchá evidence skutečných příjmů a výdajů OSVČ</dd>
+        <dt>Rozhodná částka</dt><dd>zisk z vedlejší činnosti, pod kterým se neplatí sociální pojištění</dd>
+        <dt>OBZP</dt><dd>osoba bez zdanitelných příjmů: platí si zdravotní pojištění sama</dd>
+        <dt>DUZP</dt><dd>datum uskutečnění zdanitelného plnění (DPH)</dd>
+        <dt>KH</dt><dd>kontrolní hlášení k DPH</dd>
+        <dt>Identifikovaná osoba</dt><dd>neplátce, který kvůli službám z/do EU musí přiznávat DPH</dd>
+        <dt>OSS</dt><dd>One Stop Shop: přiznání DPH z prodejů spotřebitelům v EU na jednom místě</dd>
+        <dt>Kontaktní platba</dt><dd>platba při osobním kontaktu nebo v provozovně, eviduje se v EET 2.0</dd>
+        <dt>DIS+ / Moje daně</dt><dd>online portál Finanční správy pro podání a komunikaci</dd>
+        <dt>JRF</dt><dd>jednotný registrační formulář živnostenského úřadu</dd>
+        <dt>JMHZ</dt><dd>jednotné měsíční hlášení zaměstnavatele (od 2026)</dd>
+        <dt>DPP / DPČ</dt><dd>dohoda o provedení práce / o pracovní činnosti</dd>
+        <dt>Technické zhodnocení</dt><dd>nástavba, přístavba, modernizace majetku; nad 80 000 Kč zvyšuje vstupní cenu</dd>
+        <dt>Zůstatková cena</dt><dd>vstupní cena minus dosavadní odpisy</dd>
+        <dt>Penále</dt><dd>sankce 20 % z daně doměřené při kontrole</dd>
+        <dt>SJM</dt><dd>společné jmění manželů</dd>
+        <dt>ZOK</dt><dd>zákon o obchodních korporacích (s.r.o., a.s.)</dd>
+        <dt>OZ</dt><dd>občanský zákoník</dd>
+      </dl>
+    </section>
+
+    <!-- ZDROJE -->
+    <section class="block" id="zdroje">
+      <div class="sec-head"><h2>Užitečné odkazy a zdroje</h2></div>
+      <div class="links item">
+        <a href="https://www.mojedane.cz" target="_blank" rel="noopener"><strong>Moje daně</strong><span>přiznání, paušální daň, EET, osobní daňový účet</span></a>
+        <a href="https://financnisprava.gov.cz" target="_blank" rel="noopener"><strong>Finanční správa</strong><span>tiskopisy, informace, čísla účtů FÚ</span></a>
+        <a href="https://eet.gov.cz" target="_blank" rel="noopener"><strong>EET 2.0</strong><span>oficiální informace k evidenci tržeb</span></a>
+        <a href="https://www.cssz.gov.cz" target="_blank" rel="noopener"><strong>ČSSZ</strong><span>ePortál, přehledy, zálohy, nemocenské</span></a>
+        <a href="https://portal.gov.cz" target="_blank" rel="noopener"><strong>Portál občana</strong><span>ohlášení živnosti online</span></a>
+        <a href="https://www.rzp.cz" target="_blank" rel="noopener"><strong>Živnostenský rejstřík</strong><span>ověření podnikatele</span></a>
+        <a href="https://or.justice.cz" target="_blank" rel="noopener"><strong>Obchodní rejstřík</strong><span>firmy, Sbírka listin, skuteční majitelé</span></a>
+        <a href="https://isir.justice.cz" target="_blank" rel="noopener"><strong>Insolvenční rejstřík</strong><span>než začneš obchodovat s novým klientem</span></a>
+        <a href="https://www.zakonyprolidi.cz" target="_blank" rel="noopener"><strong>Zákony pro lidi</strong><span>aktuální znění zákonů</span></a>
+        <a href="https://www.businessinfo.cz" target="_blank" rel="noopener"><strong>BusinessInfo</strong><span>státní portál pro podnikatele</span></a>
+        <a href="https://www.uoou.gov.cz" target="_blank" rel="noopener"><strong>ÚOOÚ</strong><span>GDPR a cookies</span></a>
+        <a href="https://www.coi.gov.cz" target="_blank" rel="noopener"><strong>ČOI</strong><span>ochrana spotřebitele</span></a>
+        <a href="https://upv.gov.cz" target="_blank" rel="noopener"><strong>ÚPV</strong><span>ochranné známky</span></a>
+      </div>
+      <h3>Zdroje čísel použitých v průvodci</h3>
+      <ul class="item" style="font-size:.9rem">
+        <li><a href="https://financnisprava.gov.cz/cs/financni-sprava/media-a-verejnost/tiskove-zpravy-gfr/tiskove-zpravy-2026/poplatnikum-v-prvnim-pasmu-pausalniho-rezimu-snizeni-zalohy" target="_blank" rel="noopener">Finanční správa: snížení zálohy v 1. pásmu (2026)</a></li>
+        <li><a href="https://www.forvismazars.com/cz/cs/prehledy/forvis-mazars-v-mediich/archiv-2026/pausalni-dan-2027-podnikatele-si-priplati" target="_blank" rel="noopener">Forvis Mazars: paušální daň 2027</a> a <a href="https://www.forvismazars.com/cz/cs/prehledy/forvis-mazars-v-mediich/archiv-2026/kolik-zaplatite-na-zalohach-v-roce-2027" target="_blank" rel="noopener">zálohy 2027</a></li>
+        <li><a href="https://www.businessinfo.cz/clanky/kdo-se-muze-vyhnout-elektronicke-evidenci-trzeb-podnikatelum-v-rezimu-eet-off-se-zvysi-pausalni-dan/" target="_blank" rel="noopener">BusinessInfo: EET OFF</a>, <a href="https://www.fakturoid.cz/almanach/legislativa/eet" target="_blank" rel="noopener">Fakturoid: EET 2.0</a></li>
+        <li><a href="https://www.banky.cz/clanky/pausalni-dan-2027-prvni-pasmo-9-662-kc-druhe-a-treti-beze-zmeny/" target="_blank" rel="noopener">Banky.cz: kdy se vyplatí paušální daň 2027</a></li>
+        <li><a href="https://www.e15.cz/finexpert/danove-priznani/navrat-skolkovneho-a-slevy-na-studenta-schvalen-na-danich-usetrite-az-v-roce-2028-1432587" target="_blank" rel="noopener">E15: návrat slevy na studenta</a></li>
+        <li><a href="https://www.podnikatel.cz/clanky/vyse-prijmu-od-ktere-musite-podat-danove-priznani-vzroste-na-100-tisic-korun/" target="_blank" rel="noopener">Podnikatel.cz: limit pro přiznání 100 000 Kč</a></li>
+        <li><a href="https://www.mesec.cz/clanky/dohoda-o-provedeni-prace-2027/" target="_blank" rel="noopener">Měšec: DPP a DPČ 2027</a></li>
+        <li><a href="https://mpsv.gov.cz/minimalni-mzda-v-roce-2027-vzroste-na-24-900-korun" target="_blank" rel="noopener">MPSV: minimální mzda 2027</a></li>
+        <li><a href="https://portal.pohoda.cz/dane-ucetnictvi-mzdy/mzdy-a-prace/cestovni-nahrady-v-roce-2026/" target="_blank" rel="noopener">Pohoda: cestovní náhrady 2026</a>, <a href="https://www.pruvodcepodnikanim.cz/clanek/stravovani-zamestnancu/" target="_blank" rel="noopener">stravenkový paušál 2026</a></li>
+        <li><a href="https://www.fakturoid.cz/almanach/dane/prechod-na-platce-dph" target="_blank" rel="noopener">Fakturoid: registrace k DPH</a></li>
+        <li><a href="https://money.cz/dane-a-ucetnictvi/ucetni-vs-danovy-odpis-cem-se-lisi-spocitate" target="_blank" rel="noopener">Money: daňové odpisy</a></li>
+      </ul>
+    </section>
+
+    <div class="no-results" id="noResults">Nic jsme nenašli. Zkus jiné slovo (např. „paušál“, „auto“, „faktura“).</div>
+  </main>
+</div>
+
+<footer class="site">
+  <p><strong>Rádce podnikatele</strong> · stav k 14. 11. 2026. Informace jsou obecné, zjednodušené a nenahrazují individuální daňové, účetní ani právní poradenství. Před důležitým rozhodnutím ověř aktuální znění předpisů a poraď se s daňovým poradcem nebo advokátem.</p>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Nahoru">↑</button>
+<script src="app.js"></script>
+</body>
+</html>
