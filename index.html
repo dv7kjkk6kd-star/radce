@@ -461,6 +461,58 @@ body.print-doc .print-area.inv-print { white-space: normal; font-family: var(--f
 
 .bt:nth-child(7) { background: #fff4dc; } .bt:nth-child(8) { background: #e3f7ec; } .bt:nth-child(9) { background: #e5f0ff; }
 
+/* ================= v5: samostatné stránky + chytré vyhledávání ================= */
+.pg-hide { display: none !important; }
+@keyframes pgin { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+main.pg-anim > :not(.pg-hide) { animation: pgin .35s ease both; }
+@media (prefers-reduced-motion: reduce) { main.pg-anim > * { animation: none; } }
+main > section.block.reveal { opacity: 1; transform: none; }
+.crumb { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 14px 4px; font-weight: 700; font-size: .95rem; color: var(--muted); }
+.crumb a { text-decoration: none; padding: 4px 10px; border-radius: 999px; background: #fff; border: 2px solid var(--border); }
+.crumb a:hover { border-color: var(--accent); }
+.pager { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 8px; }
+.pager a { display: flex; flex-direction: column; gap: 2px; padding: 18px 22px; border-radius: 22px; text-decoration: none; background: #fff; border: 2px solid var(--border); color: var(--text) !important; transition: transform .15s, box-shadow .15s; }
+.pager a:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.pager a small { color: var(--muted); font-weight: 700; }
+.pager a b { font-family: var(--display); font-size: 1.2rem; }
+.pager .pg-next { text-align: right; background: linear-gradient(135deg, #6c3cff, #ff4f8b); color: #fff !important; border: none; }
+.pager .pg-next small { color: rgba(255,255,255,.85); }
+.pager .pg-next.wide { grid-column: 1 / -1; }
+.topic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin-bottom: 10px; }
+.topic { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; border-radius: 20px; background: #fff; border: 2px solid var(--border); text-decoration: none; color: var(--text) !important; transition: transform .15s, border-color .15s, box-shadow .15s; }
+.topic:hover { transform: translateY(-4px); border-color: var(--c); box-shadow: 0 10px 24px rgba(60,30,120,.12); }
+.topic .e { font-size: 1.9rem; line-height: 1; }
+.topic b { font-family: var(--display); font-size: 1.12rem; }
+.topic small { color: var(--muted); font-weight: 600; line-height: 1.35; }
+.topic-grid .topic:nth-child(6n+1) { background: #f3eeff; } .topic-grid .topic:nth-child(6n+2) { background: #ffeef4; } .topic-grid .topic:nth-child(6n+3) { background: #fff6e3; }
+.topic-grid .topic:nth-child(6n+4) { background: #e8f8ef; } .topic-grid .topic:nth-child(6n+5) { background: #e8f2ff; } .topic-grid .topic:nth-child(6n+6) { background: #fdeefb; }
+@keyframes flash { 0%, 100% { box-shadow: none; } 30% { box-shadow: 0 0 0 6px #ffd84d; } }
+.flash { animation: flash 1.6s ease 2; border-radius: 16px; }
+
+.sbox { display: none; position: absolute; top: calc(100% + 8px); left: 0; width: min(720px, 94vw); max-height: 72vh; overflow: auto; background: #fff; border: 2px solid var(--border); border-radius: 22px; box-shadow: 0 24px 60px rgba(40,20,90,.22); padding: 10px; z-index: 80; }
+.sbox.open { display: block; }
+.s-h { font-size: .82rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 10px 8px 6px; }
+.s-h a { text-transform: none; letter-spacing: 0; }
+.s-chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 6px 6px; }
+.s-chips button { border: 2px solid var(--border); background: #fff8ee; border-radius: 999px; padding: 7px 13px; font-family: inherit; font-size: .95rem; font-weight: 700; color: var(--text); cursor: pointer; }
+.s-chips button:hover, .s-chips button.sel { border-color: var(--accent); background: var(--accent-soft); }
+.s-pages { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 6px 6px; }
+.s-pages a { padding: 7px 12px; border-radius: 12px; background: var(--accent-soft); text-decoration: none; font-size: .92rem; color: var(--text) !important; }
+.s-pages a:hover, .s-pages a.sel { background: linear-gradient(135deg, #6c3cff, #ff4f8b); color: #fff !important; }
+.s-res { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 12px 14px; border-radius: 14px; text-decoration: none; color: var(--text) !important; font-weight: 600; }
+.s-res:hover, .s-res.sel { background: #f6f1ff; }
+.s-t { font-weight: 800; font-size: 1.02rem; }
+.s-p { font-size: .8rem; color: var(--muted); white-space: nowrap; align-self: center; background: #fff4e6; padding: 2px 8px; border-radius: 999px; }
+.s-s { grid-column: 1 / -1; font-size: .9rem; color: var(--muted); font-weight: 500; line-height: 1.45; }
+.s-s mark { background: #ffe58a; color: inherit; border-radius: 4px; padding: 0 2px; }
+.s-dym { margin: 6px 8px 4px; padding: 8px 12px; border-radius: 12px; background: #fff4d6; font-weight: 600; }
+.s-empty { padding: 14px 10px 6px; font-weight: 700; font-size: 1.05rem; }
+@media (max-width: 640px) {
+  .sbox { position: fixed; top: 68px; left: 8px; right: 8px; width: auto; max-height: 78vh; }
+  .s-p { display: none; }
+  .pager { grid-template-columns: 1fr; }
+}
+
 </style>
 </head>
 <body>
@@ -1820,7 +1872,6 @@ body.print-doc .print-area.inv-print { white-space: normal; font-family: var(--f
 <button class="to-top" id="toTop" aria-label="Nahoru">↑</button>
 <div class="toast" id="toast"></div>
 <script>
-/* qr.js */
 /* Minimální generátor QR kódů (byte mode, úroveň opravy M, verze 1–15).
    Podle normy ISO/IEC 18004. Bez závislostí. Použití: QR.matrix(text) -> pole řádků (true = tmavý modul),
    QR.svg(text, px) -> SVG řetězec. */
@@ -2003,7 +2054,6 @@ body.print-doc .print-area.inv-print { white-space: normal; font-family: var(--f
 
 </script>
 <script>
-/* app.js */
 /* Rádce podnikatele – vyhledávání, navigace a kalkulačky.
    Všechny výpočty běží lokálně v prohlížeči. Parametry: stav k 14. 11. 2026. */
 (function () {
@@ -2315,85 +2365,9 @@ body.print-doc .print-area.inv-print { white-space: normal; font-family: var(--f
   bind(['s-rok', 's-zisk', 's-ucetni', 's-obzp'], calcSRO);
   bind(['m-rok', 'm-hruba', 'm-deti', 'm-prohl', 'm-student'], calcMzda);
 
-  // ---------- Vyhledávání ----------
-  const norm = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-  const search = $('search');
-  const sections = Array.from(document.querySelectorAll('main section.block'));
-  const hero = $('hero');
-  const noRes = $('noResults');
-  const count = $('searchCount');
-  const index = [];
-  sections.forEach((sec) => {
-    const title = norm((sec.querySelector('h2') || {}).textContent || '');
-    sec.querySelectorAll('.item').forEach((it) => {
-      index.push({ el: it, sec, text: norm(it.textContent + ' ' + (it.dataset.keywords || '') + ' ' + title) });
-    });
-  });
-  let timer;
-  function runSearch() {
-    const q = norm(search.value.trim());
-    if (q.length < 2) {
-      index.forEach((x) => {
-        x.el.classList.remove('hidden-by-search');
-        if (x.el.dataset.openedBySearch) { x.el.open = false; delete x.el.dataset.openedBySearch; }
-      });
-      sections.forEach((s) => s.classList.remove('hidden-by-search'));
-      hero.classList.remove('hidden-by-search');
-      noRes.style.display = 'none';
-      count.textContent = '';
-      return;
-    }
-    const terms = q.split(/\s+/);
-    let hits = 0;
-    const visibleSec = new Set();
-    index.forEach((x) => {
-      const ok = terms.every((t) => x.text.includes(t));
-      x.el.classList.toggle('hidden-by-search', !ok);
-      if (ok) {
-        hits++;
-        visibleSec.add(x.sec);
-        if (x.el.tagName === 'DETAILS' && !x.el.open) { x.el.open = true; x.el.dataset.openedBySearch = '1'; }
-      } else if (x.el.dataset.openedBySearch) {
-        x.el.open = false; delete x.el.dataset.openedBySearch;
-      }
-    });
-    sections.forEach((s) => s.classList.toggle('hidden-by-search', !visibleSec.has(s)));
-    hero.classList.add('hidden-by-search');
-    noRes.style.display = hits ? 'none' : 'block';
-    count.textContent = hits ? hits + ' výsledků' : '';
-  }
-  search.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(runSearch, 120); });
-  search.addEventListener('keydown', (e) => { if (e.key === 'Escape') { search.value = ''; runSearch(); } });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === '/' && document.activeElement !== search && !/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)) {
-      e.preventDefault(); search.focus();
-    }
-  });
-
-  // ---------- Navigace ----------
-  const links = Array.from(document.querySelectorAll('#toc a'));
-  const byId = {};
-  links.forEach((a) => { byId[a.getAttribute('href').slice(1)] = a; });
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (en.isIntersecting && byId[en.target.id]) {
-          links.forEach((l) => l.classList.remove('active'));
-          byId[en.target.id].classList.add('active');
-        }
-      });
-    }, { rootMargin: '-20% 0px -70% 0px' });
-    sections.forEach((s) => io.observe(s));
-  }
+  // Vyhledávání a navigace mezi stránkami řeší router.js
   const sidebar = $('sidebar');
   $('menuBtn').addEventListener('click', () => sidebar.classList.toggle('open'));
-  links.forEach((a) => a.addEventListener('click', () => {
-    sidebar.classList.remove('open');
-    if (search.value) { search.value = ''; runSearch(); }
-  }));
-  document.querySelectorAll('a.chip, .hero a[href^="#"]').forEach((a) => a.addEventListener('click', () => {
-    if (search.value) { search.value = ''; runSearch(); }
-  }));
   const toTop = $('toTop');
   window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 800), { passive: true });
   toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
@@ -2401,7 +2375,6 @@ body.print-doc .print-area.inv-print { white-space: normal; font-family: var(--f
 
 </script>
 <script>
-/* extra.js */
 /* Rádce podnikatele – průvodce situacemi, vzory dokumentů, kvíz, vyhledávač odpisových skupin, animace. */
 (function () {
   'use strict';
@@ -2905,7 +2878,6 @@ Za zhotovitele: …………………………      Za objednatele: …………
 
 </script>
 <script>
-/* tools.js */
 /* Rádce podnikatele – osobní přehled, faktura s QR platbou, hlídač limitů, rezerva, DPH, úrok z prodlení, lhůtovník. */
 (function () {
   'use strict';
@@ -3352,7 +3324,6 @@ Za zhotovitele: …………………………      Za objednatele: …………
 
 </script>
 <script>
-/* ledger.js */
 /* Rádce podnikatele – evidence příjmů a výdajů, kniha jízd, záloha dat. Vše jen v localStorage. */
 (function () {
   'use strict';
@@ -3555,6 +3526,374 @@ Za zhotovitele: …………………………      Za objednatele: …………
       rd.readAsText(f); e.target.value = '';
     });
   }
+})();
+
+</script>
+<script>
+/* Rádce podnikatele – samostatné stránky (hash routing) a chytré vyhledávání
+   (bez diakritiky, překlepy, synonyma, obecná slova, návrhy). */
+(function () {
+  'use strict';
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const main = $('content'), hero = $('hero');
+  const sections = Array.from(main.querySelectorAll(':scope > section.block'));
+  const secById = {}; sections.forEach((s) => { secById[s.id] = s; });
+
+  // ====================== STRÁNKA „VŠECHNA TÉMATA“ ======================
+  const nav = $('toc');
+  const groups = [];
+  let cur = null;
+  Array.from(nav.children).forEach((el) => {
+    if (el.classList.contains('group')) { cur = { name: el.textContent.trim(), links: [] }; groups.push(cur); }
+    else if (el.tagName === 'A' && cur) cur.links.push(el);
+  });
+  const vse = document.createElement('section');
+  vse.className = 'block'; vse.id = 'vse';
+  vse.innerHTML = '<div class="sec-head"><span class="sec-ic">🗺️</span><h2>Všechna témata</h2><span class="tag">vyber si stránku</span></div>' +
+    groups.map((g) => '<h3>' + esc(g.name) + '</h3><div class="topic-grid">' + g.links.map((a) => {
+      const id = a.getAttribute('href').slice(1), sec = secById[id];
+      const intro = sec ? ((sec.querySelector('.intro') || sec.querySelector('.sec-head .tag') || {}).textContent || '') : '';
+      return '<a class="topic" href="#' + id + '"><span class="e">' + esc((a.querySelector('.ic') || {}).textContent || '') + '</span><b>' + esc(a.textContent.replace((a.querySelector('.ic') || {}).textContent || '', '').trim()) + '</b><small>' + esc(intro.slice(0, 90)) + (intro.length > 90 ? '…' : '') + '</small></a>';
+    }).join('') + '</div>').join('');
+  const prehled = secById.prehled;
+  (prehled ? prehled.nextSibling : main.firstChild).parentNode.insertBefore(vse, prehled ? prehled.nextSibling : main.firstChild);
+  secById.vse = vse; sections.splice(sections.indexOf(prehled) + 1, 0, vse);
+
+  // pořadí stránek podle menu (jen odkazy na celé stránky)
+  const ORDER = Array.from(nav.querySelectorAll('a')).map((a) => a.getAttribute('href').slice(1)).filter((id) => secById[id]);
+  const HOME = ['prehled', 'vse'];
+  const titleOf = (id) => { const s = secById[id]; return s ? (s.querySelector('h2') || {}).textContent : ''; };
+  const iconOf = (id) => { const s = secById[id]; return s ? ((s.querySelector('.sec-ic') || {}).textContent || '') : ''; };
+
+  // drobečková navigace a stránkování
+  const crumb = document.createElement('div'); crumb.className = 'crumb';
+  const pager = document.createElement('nav'); pager.className = 'pager'; pager.setAttribute('aria-label', 'Další stránky');
+  main.appendChild(pager);
+
+  // ============================ ROUTER ============================
+  let currentPage = null;
+  function pageFor(hash) {
+    const id = decodeURIComponent((hash || '').replace(/^#/, ''));
+    if (!id || id === 'domu' || id === 'top' || id === 'hero') return { page: 'domu', target: null };
+    if (secById[id]) return { page: id, target: null };
+    const el = document.getElementById(id);
+    if (el) { const sec = el.closest('main > section.block'); if (sec) return { page: sec.id, target: el }; }
+    return { page: 'domu', target: null };
+  }
+  function show(hash, opts) {
+    opts = opts || {};
+    const { page, target } = pageFor(hash);
+    const home = page === 'domu';
+    hero.classList.toggle('pg-hide', !home);
+    sections.forEach((s) => {
+      const on = home ? HOME.includes(s.id) : s.id === page;
+      s.classList.toggle('pg-hide', !on);
+      if (on) { s.classList.add('in'); }
+    });
+    if (page !== currentPage) {
+      main.classList.remove('pg-anim'); void main.offsetWidth; main.classList.add('pg-anim');
+      currentPage = page;
+      // drobečky
+      if (home) crumb.remove();
+      else {
+        crumb.innerHTML = '<a href="#domu">🏠 Domů</a><span>›</span><a href="#vse">Témata</a><span>›</span><b>' + esc(iconOf(page) + ' ' + titleOf(page)) + '</b>';
+        secById[page].parentNode.insertBefore(crumb, secById[page]);
+      }
+      // stránkování
+      const i = ORDER.indexOf(page);
+      if (home) {
+        pager.innerHTML = '<a class="pg-next wide" href="#' + ORDER[2] + '"><small>Začni tady</small><b>' + esc(iconOf(ORDER[2]) + ' ' + titleOf(ORDER[2])) + ' →</b></a>';
+      } else {
+        const prev = ORDER[i - 1], next = ORDER[i + 1];
+        pager.innerHTML = (prev ? '<a class="pg-prev" href="#' + prev + '"><small>← Předchozí</small><b>' + esc(iconOf(prev) + ' ' + titleOf(prev)) + '</b></a>' : '<a class="pg-prev" href="#domu"><small>←</small><b>🏠 Domů</b></a>') +
+          (next ? '<a class="pg-next" href="#' + next + '"><small>Další →</small><b>' + esc(iconOf(next) + ' ' + titleOf(next)) + '</b></a>' : '<a class="pg-next" href="#domu"><small>→</small><b>🏠 Domů</b></a>');
+      }
+      document.title = (home ? 'Rádce podnikatele 2026/2027 – daně, účetnictví a právo pro OSVČ a malé firmy' : titleOf(page) + ' · Rádce podnikatele');
+    }
+    // aktivní položka menu
+    const h = (hash || '').replace(/^#/, '');
+    nav.querySelectorAll('a').forEach((a) => {
+      const id = a.getAttribute('href').slice(1);
+      a.classList.toggle('active', id === h || (!nav.querySelector('a[href="#' + h + '"]') && id === page));
+    });
+    $('sidebar').classList.remove('open');
+    // posun
+    if (target) {
+      if (target.tagName === 'DETAILS') target.open = true;
+      const det = target.closest('details'); if (det) det.open = true;
+      requestAnimationFrame(() => {
+        target.scrollIntoView({ behavior: opts.instant ? 'auto' : 'smooth', block: 'start' });
+        if (opts.flash) { target.classList.remove('flash'); void target.offsetWidth; target.classList.add('flash'); }
+      });
+    } else window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+  window.addEventListener('hashchange', () => show(location.hash));
+  // odkaz na stejnou stránku (hash se nezmění) – i tak posunout
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    if (a.getAttribute('href') === location.hash) { e.preventDefault(); show(location.hash); }
+  });
+  show(location.hash, { instant: true });
+  window.RP_go = (hash, flash) => { if (location.hash === hash) show(hash, { flash }); else { history.pushState(null, '', hash); show(hash, { flash }); } };
+  window.addEventListener('popstate', () => show(location.hash));
+
+  // ======================= CHYTRÉ VYHLEDÁVÁNÍ =======================
+  const strip = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const STOP = new Set('a i o u v ve k ke s se z ze na do od po pro za pri jak jake jaky jaka co kdy kde kdo ktery ktera ktere je jsou jsem jsi byt bude by bych bys mi me mne mu ji jim si to ten ta tu tam tak take uz jeste nebo ale aby ze proc muzu mohu musim mam mame chci potrebuju potrebuji nevim vim prosim kolik moje muj moji svuj sve svoje nejak neco nic vsechno vse kazdy cely tedy jen jenom treba hodne vic vice mene asi'.split(' '));
+  // synonyma a obecná slova → odborné pojmy (vše bez diakritiky)
+  const SYN = {
+    auto: 'automobil vozidlo odpisy kniha jizd phm', vuz: 'auto vozidlo', vozidlo: 'auto', car: 'auto',
+    benzin: 'phm palivo kniha jizd', nafta: 'phm palivo', tankovani: 'phm', cestovne: 'cestovni nahrady km', km: 'kniha jizd nahrada',
+    nezaplatil: 'pohledavka upominka predzalobni vyzva dluznik', nezaplati: 'pohledavka upominka', neplati: 'pohledavka upominka dluznik',
+    dluh: 'pohledavka dluznik insolvence', dluzi: 'pohledavka dluznik upominka', vymahani: 'pohledavka vyzva zaloba exekuce', exekuce: 'pohledavka',
+    upominka: 'pohledavka', zaloba: 'predzalobni vyzva soud',
+    vyhodit: 'vypoved zamestnanec ukonceni', propustit: 'vypoved zamestnanec', vyhazov: 'vypoved', odejit: 'vypoved', skoncit: 'vypoved ukonceni',
+    zamestnanec: 'zamestnanci mzda hpp', zamestnat: 'zamestnanci hpp dpp', brigada: 'dpp dpc brigadnik', brigadnik: 'dpp', dohoda: 'dpp dpc',
+    plat: 'mzda', vyplata: 'mzda', cista: 'cista mzda', hruba: 'hruba mzda', vyplaty: 'mzda',
+    zivnostak: 'zivnost osvc', zivnost: 'osvc', zivnostnik: 'osvc', zivnostenak: 'zivnost osvc', podnikani: 'osvc zivnost', zacit: 'zacinam podnikat zivnost', zalozit: 'zalozeni zivnost sro',
+    firma: 'sro spolecnost', eseo: 'sro', sro: 's.r.o. spolecnost jednatel',
+    pausal: 'pausalni dan vydajovy pausal', pausalka: 'pausalni dan', pausalni: 'pausalni dan pasmo',
+    priznani: 'danove priznani dap', danovak: 'danove priznani', vratka: 'preplatek vraceni dane', vratit: 'preplatek vraceni', zpatky: 'preplatek vraceni dane',
+    sleva: 'slevy sleva na poplatnika', slevy: 'sleva', deti: 'dite zvyhodneni bonus', dite: 'zvyhodneni na deti', hypoteka: 'uroky hypoteky odpocet', dar: 'dary odpocet', penzijko: 'penzijni sporeni odpocet',
+    student: 'studenta brigada', skola: 'student', studak: 'student',
+    socialka: 'socialni pojisteni zaloha cssz', socialni: 'cssz pojisteni', zdravotka: 'zdravotni pojisteni pojistovna', zdravotni: 'pojistovna', pojisteni: 'socialni zdravotni zalohy', duchod: 'socialni pojisteni',
+    nemoc: 'nemocenske', nemocenska: 'nemocenske', materska: 'materstvi rodicovska', rodicovska: 'vedlejsi cinnost',
+    zaloha: 'zalohy', zalohy: 'minimalni zalohy', minimum: 'minimalni zalohy',
+    dph: 'platce dph registrace', vat: 'dph', platce: 'dph', limit: 'obrat hranice 2 000 000 hlidac', obrat: 'limit dph', hranice: 'limit',
+    eet: 'evidence trzeb kontaktni platba', uctenka: 'eet evidence trzeb', pokladna: 'eet', hotovost: 'eet kontaktni platba', karta: 'eet kontaktni platba', terminal: 'eet',
+    odpis: 'odpisy odpisova skupina', odepsat: 'odpisy', odpisovat: 'odpisy', notebook: 'pocitac odpisy 80 000', pocitac: 'notebook odpisy', mobil: 'telefon', telefon: 'mobil naklady',
+    naklad: 'naklady vydaje', naklady: 'vydaje uznatelne', vydaj: 'vydaje', vydaje: 'naklady', uznatelne: 'vydaje naklady', odecist: 'naklady vydaje odpocet',
+    obed: 'reprezentace pohosteni', darek: 'reprezentace reklamni predmety', pohosteni: 'reprezentace',
+    leasing: 'odpisy uver', uver: 'leasing',
+    faktura: 'fakturace doklad qr platba', fakturovat: 'faktura', fakturace: 'faktura', doklad: 'faktura uctenka', qr: 'qr platba faktura', vystavit: 'faktura',
+    pokuta: 'sankce penale pokuty', penale: 'sankce pokuta', sankce: 'pokuta', kontrola: 'kontrola financni urad', financak: 'financni urad kontrola', fu: 'financni urad', urad: 'financni urad vyzva',
+    dopis: 'vyzva urad kontrola', vyzva: 'lhuta urad', datovka: 'datova schranka', schranka: 'datova schranka',
+    lhuta: 'lhutovnik termin', termin: 'terminy kalendar lhuta', deadline: 'termin lhuta', kdy: 'termin kalendar', datum: 'termin',
+    najem: 'najemne pronajem prostor', pronajem: 'najem', kancelar: 'najem prostor', kauce: 'jistota najem', najemne: 'najem',
+    smlouva: 'smlouvy kontrakt', kontrakt: 'smlouva', podpis: 'smlouva plna moc', plna: 'plna moc zmocneni',
+    reklamace: 'vadne plneni vyrizeni reklamace', vraceni: 'odstoupeni reklamace', odstoupeni: '14 dni spotrebitel',
+    eshop: 'e-shop spotrebitel online', online: 'e-shop', gdpr: 'osobni udaje cookies', cookies: 'gdpr souhlas', osobni: 'gdpr udaje',
+    insolvence: 'upadek dluhy', bankrot: 'insolvence upadek', krach: 'insolvence',
+    kalkulacka: 'kalkulacky vypocet', spocitat: 'kalkulacka vypocet', vypocet: 'kalkulacka', vyplati: 'kalkulacka srovnani vyplati se',
+    odkladat: 'rezerva', rezerva: 'odkladat dane', usetrit: 'optimalizace sleva odpocet naklady',
+    jizda: 'kniha jizd', jizdy: 'kniha jizd', evidence: 'evidence prijmu vydaju', prijmy: 'evidence prijmu', ucetnictvi: 'evidence ucetni',
+    ucetni: 'danovy poradce ucetnictvi', poradce: 'danovy poradce', pravnik: 'advokat', advokat: 'pravnik',
+    zkusebni: 'zkusebni doba', vypoved: 'vypovedni doba', odstupne: 'odstupne vypoved', dovolena: 'dovolena zamestnanec',
+    svarc: 'svarcsystem', svarcsystem: 'nelegalni prace',
+    kviz: 'test otazky', vzor: 'vzory dokumentu', formular: 'vzor dokument', sablona: 'vzor',
+    zmeny: 'novinky co se meni 2027', novinky: 'zmeny', novela: 'zmeny zakon',
+    ares: 'ico odberatel', ico: 'ares ico', iban: 'ucet qr',
+    urok: 'urok z prodleni', prodleni: 'urok z prodleni', prodleva: 'prodleni',
+    email: 'emailem mail smlouva', emailem: 'email smlouva', mail: 'email', whatsapp: 'email smlouva', sms: 'email smlouva',
+    hypoteky: 'hypoteka uroky odpocet', bydleni: 'hypoteka', zkusebni: 'zkusebni doba pracovni', doba: 'lhuta'
+  };
+  const POPULAR = ['paušální daň', 'odpisy auta', 'klient nezaplatil', 'vrácení daní student', 'faktura s QR', 'DPP limit', 'výpověď zaměstnanci', 'plátce DPH limit', 'EET 2.0', 'kniha jízd', 'co si dát do nákladů', 'kontrola z finančáku'];
+
+  // index
+  const spaced = (el) => { const out = []; const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); while (w.nextNode()) out.push(w.currentNode.nodeValue); return out.join(' '); };
+  const DOCS = [];
+  let auto = 0;
+  const ensureId = (el) => { if (!el.id) el.id = 'q' + (++auto); return el.id; };
+  function prevHeading(el, sec) {
+    let n = el.previousElementSibling;
+    while (n) { if (n.tagName === 'H3') return n.textContent.trim(); n = n.previousElementSibling; }
+    return (sec.querySelector('h2') || {}).textContent || '';
+  }
+  sections.forEach((sec) => {
+    if (sec.id === 'vse') return;
+    const st = (sec.querySelector('h2') || {}).textContent || '';
+    DOCS.push({ kind: 'page', title: st, page: sec.id, target: null, text: st + ' ' + ((sec.querySelector('.intro') || {}).textContent || '') + ' ' + ((sec.querySelector('.tag') || {}).textContent || '') + ' ' + Array.from(sec.querySelectorAll('h3, summary')).map((x) => x.textContent).join(' ') });
+    sec.querySelectorAll('.item, details.qa, .calc, h3').forEach((el) => {
+      if (el.closest('details.qa') && el.tagName !== 'DETAILS') return;
+      let title;
+      if (el.tagName === 'DETAILS') title = (el.querySelector('summary') || {}).textContent;
+      else if (el.tagName === 'H3') title = el.textContent;
+      else title = ((el.querySelector('h3') || {}).textContent) || prevHeading(el, sec);
+      const text = el.tagName === 'H3' ? title + ' ' + ((el.nextElementSibling || {}).textContent || '').slice(0, 400) : el.textContent;
+      DOCS.push({ kind: el.classList.contains('calc') ? 'tool' : 'item', title: (title || st).trim(), page: sec.id, el, text: (title || '') + ' ' + (el.dataset.keywords || '') + ' ' + text, show: el.tagName === 'H3' ? text : spaced(el) });
+    });
+  });
+  const tokenize = (s) => strip(s).replace(/\be-(mail|shop)/g, 'e$1').split(/[^a-z0-9]+/).filter((w) => w.length > 1);
+  const VOCAB = new Map();
+  DOCS.forEach((d) => {
+    d.words = tokenize(d.text);
+    d.set = new Set(d.words);
+    d.titleSet = new Set(tokenize(d.title));
+    d.raw = d.text.replace(/\s+/g, ' ').trim();
+    d.norm = strip(d.raw);
+    d.showRaw = (d.show || d.text).replace(/\s+/g, ' ').trim();
+    d.set.forEach((w) => VOCAB.set(w, (VOCAB.get(w) || 0) + 1));
+  });
+  Object.keys(SYN).forEach((k) => { if (!VOCAB.has(k)) VOCAB.set(k, 1); });
+
+  function lev(a, b, max) {
+    if (Math.abs(a.length - b.length) > max) return max + 1;
+    let prev = Array.from({ length: b.length + 1 }, (_, i) => i);
+    for (let i = 1; i <= a.length; i++) {
+      const curr = [i]; let rowMin = i;
+      for (let j = 1; j <= b.length; j++) {
+        let v = Math.min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+        curr.push(v); if (v < rowMin) rowMin = v;
+      }
+      if (rowMin > max) return max + 1;
+      prev = curr;
+    }
+    return prev[b.length];
+  }
+  const stem = (w) => w.length > 5 ? w.slice(0, Math.max(4, w.length - 2)) : w;
+  function correct(tok) {
+    if (VOCAB.has(tok) || tok.length < 4 || /^\d+$/.test(tok)) return tok;
+    // existuje slovo se stejným kořenem? pak to není překlep
+    const st = stem(tok);
+    for (const w of VOCAB.keys()) if (w.startsWith(st)) return tok;
+    const max = tok.length >= 8 ? 2 : 1;
+    let best = null, bd = max + 1, bf = 0;
+    for (const [w, f] of VOCAB) {
+      if (Math.abs(w.length - tok.length) > max) continue;
+      if (w[0] !== tok[0] && w[1] !== tok[1]) continue;
+      const d = lev(tok, w, max);
+      if (d <= max && (d < bd || (d === bd && f > bf))) { bd = d; best = w; bf = f; }
+    }
+    return best || tok;
+  }
+  function expand(q) {
+    const raw = tokenize(q).filter((t) => !STOP.has(t));
+    const fixed = raw.map(correct);
+    const groupsT = fixed.map((t) => {
+      const alts = new Map([[t, 1]]);
+      const others = new Set(fixed.filter((x) => x !== t));
+      const otherStems = Array.from(others).map(stem);
+      const add = (s, w) => { if (s && !alts.has(s) && !others.has(s) && !STOP.has(s) && !otherStems.some((o) => o.length > 3 && s.startsWith(o))) alts.set(s, w); };
+      const colloquial = !DOCS.some((d) => d.set.has(t));
+      const sw = colloquial ? 0.85 : 0.5;
+      (SYN[t] || '').split(' ').forEach((s) => add(s, sw));
+      const st = stem(t); if (SYN[st]) SYN[st].split(' ').forEach((s) => add(s, 0.45));
+      Object.keys(SYN).forEach((k) => { if (k !== t && k.length > 4 && t.length > 4 && (k.startsWith(stem(t)) || t.startsWith(stem(k)))) SYN[k].split(' ').forEach((s) => add(s, 0.4)); });
+      return alts;
+    });
+    return { raw, fixed, groups: groupsT, changed: fixed.some((t, i) => t !== raw[i]) };
+  }
+  function scoreTok(d, t) {
+    if (d.titleSet.has(t)) return 4;
+    if (d.set.has(t)) return 3;
+    const st = stem(t);
+    if (st.length >= 3) {
+      for (const w of d.titleSet) if (w.startsWith(st)) return 3;
+      for (const w of d.set) if (w.startsWith(st)) return 2;
+    }
+    if (t.includes(' ') && d.norm.includes(t)) return 3;
+    return 0;
+  }
+  function search(q) {
+    const ex = expand(q);
+    if (!ex.groups.length) return { ex, res: [] };
+    const res = [];
+    DOCS.forEach((d) => {
+      let total = 0, matched = 0;
+      ex.groups.forEach((alts) => {
+        let best = 0, direct = false;
+        alts.forEach((w, t) => { const s = scoreTok(d, t); if (s * w > best) { best = s * w; direct = w >= 0.85; } });
+        if (best > 0) matched += direct ? 1 : 0.5;
+        total += best;
+      });
+      if (!matched) return;
+      const cover = matched / ex.groups.length;
+      let score = total * (0.4 + cover) + (d.kind === 'page' ? 1.5 : d.kind === 'tool' ? 1 : 0);
+      if (strip(d.title).includes(strip(q.trim())) && q.trim().length > 2) score += 6;
+      res.push({ d, score, cover });
+    });
+    res.sort((a, b) => b.score - a.score);
+    const full = res.filter((r) => r.cover === 1);
+    const list = (full.length >= 3 ? full : res).slice(0, 40);
+    const seen = new Set(), out = [];
+    list.forEach((r) => { const key = r.d.title + r.d.page; if (!seen.has(key)) { seen.add(key); out.push(r); } });
+    return { ex, res: out.slice(0, 14) };
+  }
+  function snippet(d, terms) {
+    const n = strip(d.showRaw); let pos = -1;
+    for (const t of terms) { const st = stem(t); const p = n.indexOf(st); if (p >= 0 && (pos < 0 || p < pos)) pos = p; }
+    const cps = Array.from(d.showRaw), npos = pos < 0 ? 0 : Array.from(d.showRaw.slice(0, pos)).length;
+    const start = Math.max(0, npos - 50);
+    let s = (start > 0 ? '…' : '') + cps.slice(start, start + 160).join('') + (cps.length > start + 160 ? '…' : '');
+    let h = esc(s);
+    const ns = strip(h);
+    const marks = [];
+    terms.forEach((t) => { const st = stem(t); if (st.length < 3) return; let i = ns.indexOf(st); while (i >= 0) { if (!/[a-z0-9]/.test(ns[i - 1] || ' ')) { let e = i + st.length; while (e < ns.length && /[a-z0-9]/.test(ns[e])) e++; marks.push([i, e]); } i = ns.indexOf(st, i + 1); } });
+    marks.sort((a, b) => a[0] - b[0]);
+    for (let k = marks.length - 1; k > 0; k--) if (marks[k][0] < marks[k - 1][1]) marks.splice(k, 1);
+    marks.sort((a, b) => b[0] - a[0]);
+    let last = Infinity;
+    marks.forEach(([a, b]) => { if (b <= last) { h = h.slice(0, a) + '<mark>' + h.slice(a, b) + '</mark>' + h.slice(b); last = a; } });
+    return h;
+  }
+
+  // UI
+  const input = $('search');
+  const wrap = input.closest('.search-wrap');
+  const box = document.createElement('div'); box.className = 'sbox'; box.id = 'sbox'; box.setAttribute('role', 'listbox');
+  wrap.appendChild(box);
+  input.setAttribute('placeholder', 'Na co se chceš zeptat? Např. „nezaplatil mi klient“, „auto náklady“…');
+  input.setAttribute('aria-controls', 'sbox'); input.setAttribute('autocomplete', 'off');
+  let sel = -1, items = [];
+  const chips = (arr) => '<div class="s-chips">' + arr.map((p) => '<button type="button" data-q="' + esc(p) + '">' + esc(p) + '</button>').join('') + '</div>';
+  function render() {
+    const q = input.value.trim();
+    sel = -1;
+    if (q.length < 2) {
+      box.innerHTML = '<div class="s-h">💡 Nevíš, jak se to přesně jmenuje? Napiš to svými slovy, třeba s překlepem. Nebo zkus:</div>' + chips(POPULAR) +
+        '<div class="s-h">📚 Stránky</div><div class="s-pages">' + ORDER.slice(0, 40).map((id) => '<a href="#' + id + '">' + esc(iconOf(id) + ' ' + titleOf(id)) + '</a>').join('') + '</div>';
+      items = Array.from(box.querySelectorAll('a, button')); box.classList.add('open'); return;
+    }
+    const { ex, res } = search(q);
+    const terms = ex.groups.flatMap((g) => Array.from(g.keys()).filter((t) => !t.includes(' ')));
+    let h = '';
+    if (ex.changed) h += '<div class="s-dym">Hledám: <b>' + esc(ex.fixed.join(' ')) + '</b> <small>(opraveno z „' + esc(ex.raw.join(' ')) + '“)</small></div>';
+    if (!res.length) {
+      h += '<div class="s-empty">😕 Nenašel jsem nic k „' + esc(q) + '“.<br>Zkus jiné slovo, nebo vyber téma:</div>' + chips(POPULAR.slice(0, 8)) +
+        '<div class="s-h">Nebo projdi <a href="#vse">všechna témata</a> či průvodce <a href="#pruvodce">Co mám teď dělat?</a></div>';
+    } else {
+      const pages = res.filter((r) => r.d.kind === 'page').slice(0, 4);
+      const rest = res.filter((r) => r.d.kind !== 'page').slice(0, 10);
+      if (pages.length) h += '<div class="s-h">📚 Stránky</div><div class="s-pages">' + pages.map((r) => '<a href="#' + r.d.page + '" data-go="#' + r.d.page + '">' + esc(iconOf(r.d.page) + ' ' + r.d.title) + '</a>').join('') + '</div>';
+      if (rest.length) h += '<div class="s-h">🔎 Odpovědi a nástroje</div>' + rest.map((r) => {
+        const id = ensureId(r.d.el);
+        return '<a class="s-res" href="#' + id + '" data-go="#' + id + '"><span class="s-t">' + (r.d.kind === 'tool' ? '🧮 ' : '') + esc(r.d.title) + '</span><span class="s-p">' + esc(iconOf(r.d.page) + ' ' + titleOf(r.d.page)) + '</span><span class="s-s">' + snippet(r.d, terms) + '</span></a>';
+      }).join('');
+    }
+    box.innerHTML = h; items = Array.from(box.querySelectorAll('a, button')); box.classList.add('open');
+  }
+  function close() { box.classList.remove('open'); sel = -1; }
+  let tmr;
+  input.addEventListener('input', () => { clearTimeout(tmr); tmr = setTimeout(render, 110); });
+  input.addEventListener('focus', render);
+  input.addEventListener('keydown', (e) => {
+    if (!box.classList.contains('open')) return;
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      sel = (sel + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length;
+      items.forEach((x, i) => x.classList.toggle('sel', i === sel)); items[sel].scrollIntoView({ block: 'nearest' });
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      const t = items[sel >= 0 ? sel : items.findIndex((x) => x.matches('.s-res, .s-pages a'))];
+      if (t) t.click();
+    } else if (e.key === 'Escape') { close(); input.blur(); }
+  });
+  box.addEventListener('mousedown', (e) => e.preventDefault());
+  box.addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-q]');
+    if (b) { input.value = b.dataset.q; render(); input.focus(); return; }
+    const a = e.target.closest('a[href^="#"]');
+    if (a) { e.preventDefault(); close(); input.blur(); window.RP_go(a.getAttribute('href'), true); }
+  });
+  document.addEventListener('click', (e) => { if (!wrap.contains(e.target)) close(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === '/' && !/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)) { e.preventDefault(); input.focus(); }
+  });
+  const cnt = $('searchCount'); if (cnt) cnt.remove();
+  const nr = $('noResults'); if (nr) nr.remove();
+  window.RP_search = search;
 })();
 
 </script>
